@@ -804,7 +804,7 @@
     "licenses": "MIT",
     "repository": "https://github.com/juliangruber/balanced-match"
   },
-  "baseline-browser-mapping@2.10.30": {
+  "baseline-browser-mapping@2.10.31": {
     "licenses": "Apache-2.0",
     "repository": "https://github.com/web-platform-dx/baseline-browser-mapping"
   },
@@ -988,7 +988,7 @@
     "repository": "https://github.com/Kilian/electron-to-chromium",
     "publisher": "Kilian Valkhof"
   },
-  "enhanced-resolve@5.21.3": {
+  "enhanced-resolve@5.21.4": {
     "licenses": "MIT",
     "repository": "https://github.com/webpack/enhanced-resolve",
     "publisher": "Tobias Koppers @sokra"
@@ -1324,7 +1324,7 @@
     "publisher": "Andres Suarez",
     "email": "zertosh@gmail.com"
   },
-  "lru-cache@11.3.6": {
+  "lru-cache@11.4.0": {
     "licenses": "BlueOak-1.0.0",
     "repository": "https://github.com/isaacs/node-lru-cache",
     "publisher": "Isaac Z. Schlueter",
@@ -1551,7 +1551,7 @@
     "licenses": "ISC",
     "repository": "https://github.com/charmander/pg-int8"
   },
-  "pg-protocol@1.13.0": {
+  "pg-protocol@1.14.0": {
     "licenses": "MIT",
     "repository": "https://github.com/brianc/node-postgres"
   },
