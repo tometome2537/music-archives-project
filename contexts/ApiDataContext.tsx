@@ -31,6 +31,8 @@ export interface LiveInformation {
 export interface BelongHistory {
 	entityId: string | null;
 	entityOrganizationId: string | null;
+	joinDate: string | null;
+	leaveDate: string | null;
 }
 export interface Entity {
 	id: string | null;
