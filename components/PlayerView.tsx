@@ -3,11 +3,9 @@ import { useTheme } from "@mui/material/styles";
 import type { Dispatch, SetStateAction } from "react";
 import { useState } from "react";
 import type { YouTubePlayer } from "react-youtube";
-import type { InputValue } from "@/components/Navbar/SearchBar/SearchBar";
 import { useAppleMusic } from "@/contexts/AppleMusicContext";
 import { useBrowserInfoContext } from "@/contexts/BrowserInfoContext";
 import rgbToHex from "@/libs/colorConverter";
-import type { MultiSearchBarSearchSuggestion } from "./Navbar/SearchBar/MultiSearchBar";
 import {
 	useAppleMusicEvents,
 	usePlaybackEndHandling,
@@ -26,19 +24,7 @@ import type {
 } from "./Player/types";
 import type { YouTubePlayerState } from "./YouTubePlayerView";
 
-// タイプを再エクスポート
-export {
-	type PlayerItem,
-	type PlayerPlaylist,
-	PlayerType,
-} from "./Player/types";
-
 type PlayerProps = {
-	// マルチサーチバー
-	inputValue: InputValue[];
-	setInputValue: Dispatch<SetStateAction<InputValue[]>>;
-	searchSuggestion: MultiSearchBarSearchSuggestion[];
-
 	// フルスクリーンで表示するかどうか
 	isPlayerFullscreen: boolean;
 	setIsPlayerFullscreen: Dispatch<SetStateAction<boolean>>;
@@ -47,15 +33,11 @@ type PlayerProps = {
 	setPlayerItem: Dispatch<SetStateAction<PlayerItem | undefined>>;
 	playerPlaylist?: PlaylistType; // プレイリスト
 	setPlayerPlaylist?: Dispatch<SetStateAction<PlaylistType | undefined>>;
-
 	style?: React.CSSProperties; // 外部からスタイルを受け取る（オプション）
 };
 
 export default function PlayerView(props: PlayerProps) {
 	const {
-		// inputValue,
-		setInputValue,
-		searchSuggestion,
 		isPlayerFullscreen,
 		setIsPlayerFullscreen,
 		playerItem,
@@ -211,8 +193,6 @@ export default function PlayerView(props: PlayerProps) {
 						playerItem={playerItem}
 						title={youTubePlayerState?.getVideoData.title}
 						author={youTubePlayerState?.getVideoData.author}
-						searchSuggestion={searchSuggestion}
-						setInputValue={setInputValue}
 						setIsFullscreen={setIsPlayerFullscreen}
 						width={width}
 					/>

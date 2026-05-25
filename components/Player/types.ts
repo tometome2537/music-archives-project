@@ -14,10 +14,9 @@ export type PlayerItem = {
 	channelId?: string;
 	publishedAt?: Date;
 	duration?: number;
-	actorId?: Array<string>;
-	organizationId?: Array<string>;
 	arWidth?: number; // 画面比率の幅
 	arHeight?: number; // 画面比率の高さ
+	node?: React.ReactNode;
 };
 
 export type PlayerPlaylist = {

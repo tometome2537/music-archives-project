@@ -21,7 +21,7 @@ export type TabMap = {
 	scrollTo: number;
 	children: ReactNode;
 	// タブが切り替わった時に実行する処理
-	onClick: () => void;
+	onClick?: () => void;
 };
 
 export default function useTabScroll(
@@ -74,8 +74,8 @@ export default function useTabScroll(
 		if (activeTab !== "") {
 			setIsPlayerFullscreen(false);
 		}
-		i.onClick();
-	}, [activeTab, scrollToPosition, tabMaps, setIsPlayerFullscreen]);
+		i.onClick?.();
+	}, [tabMaps, activeTab, scrollToPosition, setIsPlayerFullscreen]);
 
 	// 画面のサイズの変化を監視
 	useEffect(() => {
@@ -234,5 +234,6 @@ export default function useTabScroll(
 	return {
 		mainContents,
 		tabs,
+		activeTab,
 	};
 }

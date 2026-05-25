@@ -20,7 +20,7 @@ import type {
 	AdditionalSearchSuggestions,
 	InputValue,
 } from "@/components/Navbar/SearchBar/SearchBar";
-import type { PlayerItem, PlayerPlaylist } from "@/components/PlayerView"; // 型としてのインポート
+import type { PlayerItem, PlayerPlaylist } from "@/components/Player/types";
 import PlayerView from "@/components/PlayerView";
 import type { TabMap } from "@/components/TabScroll";
 import useTabScroll from "@/components/TabScroll";
@@ -115,7 +115,7 @@ export default function RootLayout() {
 		}
 
 		return result;
-	}, [apiData?.Music?.data?.map]);
+	}, [apiData?.Music?.data]);
 	const musicSearchSuggestions = useCallback(() => {
 		const result: MultiSearchBarSearchSuggestion[] = [];
 
@@ -142,7 +142,7 @@ export default function RootLayout() {
 		}
 
 		return result;
-	}, [apiData.Music.data.map]);
+	}, [apiData.Music.data]);
 	const entitySearchSuggestions = useCallback(() => {
 		const result: MultiSearchBarSearchSuggestion[] = [];
 
@@ -336,95 +336,14 @@ export default function RootLayout() {
 					<TemporaryYouTubeTab
 						key="tempYoutube"
 						inputValue={inputValue}
+						searchSuggestion={searchSuggestion}
+						setInputValue={setInputValue}
 						playerItem={playerItem}
 						setPlayerItem={setPlayerItem}
 						setPlayerPlaylist={setPlayerPlaylist}
 						setIsPlayerFullscreen={setIsPlayerFullscreen}
 					/>
 				),
-				onClick: () => {
-					setAvailableCategoryIds([
-						"",
-						"actor",
-						"organization",
-						// "YouTubeChannel",
-						"title",
-						"description",
-						"specialWord_plusonica",
-						"musicArtistName",
-						"musicTitle",
-					]);
-					setLimitSearchCategory([
-						// { categoryId: "actor", categoryLabel: "出演者" },
-						// {
-						//     categoryId: "organization",
-						//     categoryLabel: "組織",
-						// },
-					]);
-					setFixedOptionValues(["UCZx7esGXyW6JXn98byfKEIA"]);
-
-					// const i = inputValue.find(
-					//     (item) => item.value === "UCZx7esGXyW6JXn98byfKEIA",
-					// );
-					// if (!i) {
-					//     setInputValue([
-					//         {
-					//             sort: 101,
-					//             createdAt: new Date(),
-					//             label: "ぷらそにか",
-					//             value: "UCZx7esGXyW6JXn98byfKEIA",
-					//             imgSrc: "https://yt3.ggpht.com/ytc/AIdro_lB6NxMtujj7oK0See-TGPL5eq-TjowmK6DFSjgLyCj0g=s88-c-k-c0x00ffffff-no-rj",
-					//             categoryId: "YouTubeChannel",
-					//             categoryLabel: "YouTube",
-					//         },
-					//         ...inputValue.filter(
-					//             (item) =>
-					//                 item.categoryId !== "YouTubeChannel",
-					//         ),
-					//     ]);
-					// }
-					setTextSuggestionCategory([
-						{
-							sort: 20,
-							categoryId: "title",
-							categoryLabel: "タイトル",
-						},
-						{
-							sort: 22,
-							categoryId: "description",
-							categoryLabel: "概要欄",
-						},
-					]);
-
-					const result: MultiSearchBarSearchSuggestion[] = [];
-
-					// スペシャル検索候補を追加
-					result.push({
-						label: "ぷらそにか(original)",
-						value: "ぷらそにか(original)",
-						categoryId: "specialWord_plusonica",
-						categoryLabel: "特別な検索",
-						categorySort: 999,
-						icon: <MusicNote />,
-					});
-					result.push({
-						label: "ぷらっとみゅーじっく♪",
-						value: "ぷらっとみゅーじっく♪",
-						categoryId: "specialWord_plusonica",
-						categoryLabel: "特別な検索",
-						categorySort: 999,
-						icon: <MusicNote />,
-					});
-					// 人物を追加
-					result.push(...entitySearchSuggestions());
-					// アーティストを追加
-					result.push(...ArtistsSearchSuggestions());
-					// 楽曲名を追加
-					result.push(...musicSearchSuggestions());
-
-					// 検索候補を更新
-					setSearchSuggestion(result);
-				},
 			},
 			// {
 			//     value: "liveInformation",
@@ -452,17 +371,6 @@ export default function RootLayout() {
 				children: (
 					<AppleMusicLibrary key="AppleMusic" inputValue={inputValue} />
 				),
-				onClick: () => {
-					setAvailableCategoryIds([
-						"",
-						"actor",
-						"organization",
-						"musicArtistName",
-						"musicTitle",
-					]);
-					setLimitSearchCategory([]);
-					setFixedOptionValues([]);
-				},
 			});
 		}
 
@@ -474,16 +382,97 @@ export default function RootLayout() {
 		});
 
 		return list;
+	}, [musicKit, inputValue, playerItem, searchSuggestion]);
+
+	const { mainContents, tabs, activeTab } = useTabScroll(
+		tabMaps,
+		setIsPlayerFullscreen,
+	);
+
+	// タブや検索候補元のデータが更新されたら、検索設定を更新する
+	react.useEffect(() => {
+		if (activeTab === "") {
+			setAvailableCategoryIds([
+				"",
+				"actor",
+				"organization",
+				"title",
+				"description",
+				"specialWord_plusonica",
+				"musicArtistName",
+				"musicTitle",
+			]);
+			setLimitSearchCategory([]);
+			setFixedOptionValues(["UCZx7esGXyW6JXn98byfKEIA"]);
+			setTextSuggestionCategory([
+				{
+					sort: 20,
+					categoryId: "title",
+					categoryLabel: "タイトル",
+				},
+				{
+					sort: 22,
+					categoryId: "description",
+					categoryLabel: "概要欄",
+				},
+			]);
+
+			const result: MultiSearchBarSearchSuggestion[] = [];
+
+			// スペシャル検索候補を追加
+			result.push({
+				label: "ぷらそにか(original)",
+				value: "ぷらそにか(original)",
+				categoryId: "specialWord_plusonica",
+				categoryLabel: "特別な検索",
+				categorySort: 999,
+				icon: <MusicNote />,
+			});
+			result.push({
+				label: "ぷらっとみゅーじっく♪",
+				value: "ぷらっとみゅーじっく♪",
+				categoryId: "specialWord_plusonica",
+				categoryLabel: "特別な検索",
+				categorySort: 999,
+				icon: <MusicNote />,
+			});
+			// 人物を追加
+			result.push(...entitySearchSuggestions());
+			// アーティストを追加
+			result.push(...ArtistsSearchSuggestions());
+			// 楽曲名を追加
+			result.push(...musicSearchSuggestions());
+
+			// 検索候補を更新
+			setSearchSuggestion(result);
+		} else if (activeTab === "AppleMusic") {
+			setAvailableCategoryIds([
+				"",
+				"actor",
+				"organization",
+				"musicArtistName",
+				"musicTitle",
+			]);
+			setLimitSearchCategory([]);
+			setFixedOptionValues([]);
+			setTextSuggestionCategory([]);
+
+			const result: MultiSearchBarSearchSuggestion[] = [];
+			// 人物を追加
+			result.push(...entitySearchSuggestions());
+			// アーティストを追加
+			result.push(...ArtistsSearchSuggestions());
+			// 楽曲名を追加
+			result.push(...musicSearchSuggestions());
+
+			setSearchSuggestion(result);
+		}
 	}, [
-		musicKit,
-		inputValue,
-		playerItem,
+		activeTab,
+		entitySearchSuggestions,
 		ArtistsSearchSuggestions,
 		musicSearchSuggestions,
-		entitySearchSuggestions,
 	]);
-
-	const tabScroll = useTabScroll(tabMaps, setIsPlayerFullscreen);
 
 	return (
 		<Fragment>
@@ -543,7 +532,7 @@ export default function RootLayout() {
 				/>
 			</Navbar>
 			{/* メインコンテンツ */}
-			{tabScroll.mainContents()}
+			{mainContents()}
 			{/* 画面下に固定されたタブバー */}
 			<AppBar
 				position="fixed"
@@ -563,9 +552,6 @@ export default function RootLayout() {
 			>
 				{/* Player */}
 				<PlayerView
-					inputValue={inputValue}
-					setInputValue={setInputValue}
-					searchSuggestion={searchSuggestion}
 					playerItem={playerItem}
 					setPlayerItem={setPlayerItem}
 					playerPlaylist={playerPlaylist}
@@ -582,7 +568,7 @@ export default function RootLayout() {
 					}}
 				/>
 				{/* タブ切り替えボタン */}
-				{tabScroll.tabs()}
+				{tabs()}
 			</AppBar>
 		</Fragment>
 	);
