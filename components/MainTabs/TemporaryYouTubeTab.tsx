@@ -2,7 +2,11 @@ import { Box } from "@mui/material";
 import type { Dispatch, SetStateAction } from "react";
 import { Fragment, useCallback, useEffect, useState } from "react";
 import LoadingPage from "@/components/LoadingPage";
+import type { MultiSearchBarSearchSuggestion } from "@/components/Navbar/SearchBar/MultiSearchBar";
 import type { InputValue } from "@/components/Navbar/SearchBar/SearchBar";
+import searchBarExternalChip from "@/components/Navbar/SearchBar/SearchBarExternalChip";
+import type { PlayerItem, PlayerPlaylist } from "@/components/Player/types";
+import { PlayerType } from "@/components/Player/types";
 import type { Video, YouTubeAccount } from "@/contexts/ApiDataContext";
 import { useApiDataContext } from "@/contexts/ApiDataContext";
 import { useBrowserInfoContext } from "@/contexts/BrowserInfoContext";
@@ -12,12 +16,12 @@ import {
 } from "@/src/openapi-client/api-node-tometome";
 import Album from "../Album";
 import Loading from "../Loading";
-import type { PlayerItem, PlayerPlaylist } from "../PlayerView";
-import { PlayerType } from "../PlayerView";
 import Thumbnail from "../Thumbnail";
 
 type TemporaryYouTubeTab = {
 	inputValue: InputValue[];
+	searchSuggestion: MultiSearchBarSearchSuggestion[];
+	setInputValue: Dispatch<SetStateAction<InputValue[]>>;
 	playerItem: PlayerItem | undefined;
 	setPlayerItem: Dispatch<SetStateAction<PlayerItem | undefined>>;
 	setPlayerPlaylist: Dispatch<SetStateAction<PlayerPlaylist | undefined>>;
@@ -419,6 +423,14 @@ export function TemporaryYouTubeTab(props: TemporaryYouTubeTab) {
 											// APIから受け取った値の型を変換する。
 											const searchResult: Array<PlayerItem> = resultVideo
 												? resultVideo.map((item: Video) => {
+														const actorId = item.person
+															? item.person
+																	.split(/ , |,| ,|, /)
+																	.filter((v) => v)
+															: [];
+														const organizationId = Object.keys(
+															JSON.parse(item.organization || "{}"),
+														);
 														const result: PlayerItem = {
 															type: PlayerType.YouTube,
 															mediaId: item.videoId ?? undefined,
@@ -432,14 +444,13 @@ export function TemporaryYouTubeTab(props: TemporaryYouTubeTab) {
 															publishedAt: item.publishedAt
 																? new Date(item.publishedAt)
 																: undefined,
-															actorId: item.person
-																? item.person
-																		.split(/ , |,| ,|, /)
-																		.filter((v) => v)
-																: [],
-															organizationId: Object.keys(
-																JSON.parse(item.organization || "{}"),
-															),
+															node: searchBarExternalChip({
+																ids: [...actorId, ...organizationId],
+																searchSuggestion: props.searchSuggestion,
+																setInputValue: props.setInputValue,
+																onClick: () =>
+																	props.setIsPlayerFullscreen(false),
+															}),
 														};
 														return result;
 													})
