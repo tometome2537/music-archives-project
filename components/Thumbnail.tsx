@@ -12,6 +12,7 @@ import Image from "next/image";
 import type { MouseEventHandler } from "react";
 import { useState } from "react";
 import { formatDuration, timeAgo } from "../utils/dateUtils";
+import { formatViewCount } from "../utils/numberUtils";
 import NoteContent from "./NoteContent";
 import YouTubePlayer from "./YouTubePlayerView";
 
@@ -276,7 +277,8 @@ export default function Thumbnail({
 						sx={{ marginTop: 0.5, textAlign: "center" }}
 					>
 						{channelTitle && channelTitle}
-						{viewCount && ` ・ ${String(viewCount)}回視聴`}
+						{typeof viewCount === "number" &&
+							` ・ ${formatViewCount(viewCount)}視聴`}
 						{publishedAt && ` ・ ${timeAgo(publishedAt)}`}
 					</Typography>
 				</Box>
