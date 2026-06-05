@@ -99,14 +99,14 @@ export function YoutubeVideoFromJSONTyped(json: any, ignoreDiscriminator: boolea
     return {
         
         'id': json['id'] == null ? undefined : json['id'],
-        'ownerChannelId': json['owner_channel_id'] == null ? undefined : json['owner_channel_id'],
-        'channelId': json['channel_id'] == null ? undefined : json['channel_id'],
-        'publishedAt': json['published_at'] == null ? undefined : (new Date(json['published_at'])),
-        'privacyStatus': json['privacy_status'] == null ? undefined : json['privacy_status'],
+        'ownerChannelId': json['ownerChannelId'] == null ? undefined : json['ownerChannelId'],
+        'channelId': json['channelId'] == null ? undefined : json['channelId'],
+        'publishedAt': json['publishedAt'] == null ? undefined : (new Date(json['publishedAt'])),
+        'privacyStatus': json['privacyStatus'] == null ? undefined : json['privacyStatus'],
         '_short': json['short'] == null ? undefined : json['short'],
-        'musicType': json['music_type'] == null ? undefined : json['music_type'],
-        'thumbnailUrl': json['thumbnail_url'] == null ? undefined : json['thumbnail_url'],
-        'artistId': json['artist_id'] == null ? undefined : json['artist_id'],
+        'musicType': json['musicType'] == null ? undefined : json['musicType'],
+        'thumbnailUrl': json['thumbnailUrl'] == null ? undefined : json['thumbnailUrl'],
+        'artistId': json['artistId'] == null ? undefined : json['artistId'],
         'duration': json['duration'] == null ? undefined : json['duration'],
     };
 }
@@ -123,14 +123,14 @@ export function YoutubeVideoToJSONTyped(value?: YoutubeVideo | null, ignoreDiscr
     return {
         
         'id': value['id'],
-        'owner_channel_id': value['ownerChannelId'],
-        'channel_id': value['channelId'],
-        'published_at': value['publishedAt'] == null ? value['publishedAt'] : value['publishedAt'].toISOString(),
-        'privacy_status': value['privacyStatus'],
+        'ownerChannelId': value['ownerChannelId'],
+        'channelId': value['channelId'],
+        'publishedAt': value['publishedAt'] == null ? value['publishedAt'] : value['publishedAt'].toISOString(),
+        'privacyStatus': value['privacyStatus'],
         'short': value['_short'],
-        'music_type': value['musicType'],
-        'thumbnail_url': value['thumbnailUrl'],
-        'artist_id': value['artistId'],
+        'musicType': value['musicType'],
+        'thumbnailUrl': value['thumbnailUrl'],
+        'artistId': value['artistId'],
         'duration': value['duration'],
     };
 }

@@ -15,7 +15,6 @@ Name | Type
 `quoteRepostId` | string
 `urls` | Array&lt;string&gt;
 `medias` | [Array&lt;XPostMediasInner&gt;](XPostMediasInner.md)
-`mediaTypeVersion` | string
 
 ## Example
 
@@ -33,7 +32,6 @@ const example = {
   "quoteRepostId": null,
   "urls": null,
   "medias": null,
-  "mediaTypeVersion": null,
 } satisfies XPost
 
 console.log(example)

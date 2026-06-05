@@ -80,7 +80,7 @@ export function V1XPostsGet200ResponseFromJSONTyped(json: any, ignoreDiscriminat
         
         'user': json['user'] == null ? undefined : XUserFromJSON(json['user']),
         'posts': json['posts'] == null ? undefined : ((json['posts'] as Array<any>).map(XPostFromJSON)),
-        'relatedPosts': json['related_posts'] == null ? undefined : json['related_posts'],
+        'relatedPosts': json['relatedPosts'] == null ? undefined : json['relatedPosts'],
     };
 }
 
@@ -97,7 +97,7 @@ export function V1XPostsGet200ResponseToJSONTyped(value?: V1XPostsGet200Response
         
         'user': XUserToJSON(value['user']),
         'posts': value['posts'] == null ? undefined : ((value['posts'] as Array<any>).map(XPostToJSON)),
-        'related_posts': value['relatedPosts'],
+        'relatedPosts': value['relatedPosts'],
     };
 }
 

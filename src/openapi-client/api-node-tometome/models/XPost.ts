@@ -81,12 +81,6 @@ export interface XPost {
      * @memberof XPost
      */
     medias?: Array<XPostMediasInner>;
-    /**
-     * 
-     * @type {string}
-     * @memberof XPost
-     */
-    mediaTypeVersion?: string;
 }
 
 /**
@@ -108,14 +102,13 @@ export function XPostFromJSONTyped(json: any, ignoreDiscriminator: boolean): XPo
         
         'id': json['id'] == null ? undefined : json['id'],
         'text': json['text'] == null ? undefined : json['text'],
-        'publishedAt': json['published_at'] == null ? undefined : (new Date(json['published_at'])),
-        'userId': json['user_id'] == null ? undefined : json['user_id'],
-        'replyId': json['reply_id'] == null ? undefined : json['reply_id'],
-        'repostId': json['repost_id'] == null ? undefined : json['repost_id'],
-        'quoteRepostId': json['quote_repost_id'] == null ? undefined : json['quote_repost_id'],
+        'publishedAt': json['publishedAt'] == null ? undefined : (new Date(json['publishedAt'])),
+        'userId': json['userId'] == null ? undefined : json['userId'],
+        'replyId': json['replyId'] == null ? undefined : json['replyId'],
+        'repostId': json['repostId'] == null ? undefined : json['repostId'],
+        'quoteRepostId': json['quoteRepostId'] == null ? undefined : json['quoteRepostId'],
         'urls': json['urls'] == null ? undefined : json['urls'],
         'medias': json['medias'] == null ? undefined : ((json['medias'] as Array<any>).map(XPostMediasInnerFromJSON)),
-        'mediaTypeVersion': json['media_type_version'] == null ? undefined : json['media_type_version'],
     };
 }
 
@@ -132,14 +125,13 @@ export function XPostToJSONTyped(value?: XPost | null, ignoreDiscriminator: bool
         
         'id': value['id'],
         'text': value['text'],
-        'published_at': value['publishedAt'] == null ? value['publishedAt'] : value['publishedAt'].toISOString(),
-        'user_id': value['userId'],
-        'reply_id': value['replyId'],
-        'repost_id': value['repostId'],
-        'quote_repost_id': value['quoteRepostId'],
+        'publishedAt': value['publishedAt'] == null ? value['publishedAt'] : value['publishedAt'].toISOString(),
+        'userId': value['userId'],
+        'replyId': value['replyId'],
+        'repostId': value['repostId'],
+        'quoteRepostId': value['quoteRepostId'],
         'urls': value['urls'],
         'medias': value['medias'] == null ? undefined : ((value['medias'] as Array<any>).map(XPostMediasInnerToJSON)),
-        'media_type_version': value['mediaTypeVersion'],
     };
 }
 

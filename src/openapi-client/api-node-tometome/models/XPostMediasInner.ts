@@ -91,8 +91,8 @@ export function XPostMediasInnerFromJSONTyped(json: any, ignoreDiscriminator: bo
         
         'id': json['id'] == null ? undefined : json['id'],
         'type': json['type'] == null ? undefined : json['type'],
-        'sourcePostId': json['source_post_id'] == null ? undefined : json['source_post_id'],
-        'sourceUserId': json['source_user_id'] == null ? undefined : json['source_user_id'],
+        'sourcePostId': json['sourcePostId'] == null ? undefined : json['sourcePostId'],
+        'sourceUserId': json['sourceUserId'] == null ? undefined : json['sourceUserId'],
         'media': json['media'] == null ? undefined : XPostMediasInnerMediaFromJSON(json['media']),
         'image': json['image'] == null ? undefined : XPostMediasInnerImageFromJSON(json['image']),
     };
@@ -111,8 +111,8 @@ export function XPostMediasInnerToJSONTyped(value?: XPostMediasInner | null, ign
         
         'id': value['id'],
         'type': value['type'],
-        'source_post_id': value['sourcePostId'],
-        'source_user_id': value['sourceUserId'],
+        'sourcePostId': value['sourcePostId'],
+        'sourceUserId': value['sourceUserId'],
         'media': XPostMediasInnerMediaToJSON(value['media']),
         'image': XPostMediasInnerImageToJSON(value['image']),
     };

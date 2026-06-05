@@ -81,12 +81,12 @@ export function YoutubeReleaseFromJSONTyped(json: any, ignoreDiscriminator: bool
     return {
         
         'id': json['id'] == null ? undefined : json['id'],
-        'listIndex': json['list_index'] == null ? undefined : json['list_index'],
+        'listIndex': json['listIndex'] == null ? undefined : json['listIndex'],
         'title': json['title'] == null ? undefined : json['title'],
-        'videoId': json['video_id'] == null ? undefined : json['video_id'],
+        'videoId': json['videoId'] == null ? undefined : json['videoId'],
         'duration': json['duration'] == null ? undefined : json['duration'],
-        'releaseVideoId': json['release_video_id'] == null ? undefined : json['release_video_id'],
-        'playlistId': json['playlist_id'] == null ? undefined : json['playlist_id'],
+        'releaseVideoId': json['releaseVideoId'] == null ? undefined : json['releaseVideoId'],
+        'playlistId': json['playlistId'] == null ? undefined : json['playlistId'],
     };
 }
 
@@ -102,12 +102,12 @@ export function YoutubeReleaseToJSONTyped(value?: YoutubeRelease | null, ignoreD
     return {
         
         'id': value['id'],
-        'list_index': value['listIndex'],
+        'listIndex': value['listIndex'],
         'title': value['title'],
-        'video_id': value['videoId'],
+        'videoId': value['videoId'],
         'duration': value['duration'],
-        'release_video_id': value['releaseVideoId'],
-        'playlist_id': value['playlistId'],
+        'releaseVideoId': value['releaseVideoId'],
+        'playlistId': value['playlistId'],
     };
 }
 

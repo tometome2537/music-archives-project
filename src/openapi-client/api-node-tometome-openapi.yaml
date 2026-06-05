@@ -37,7 +37,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/x_user'
+                $ref: '#/components/schemas/xUser'
 
   /v1/x/post/{postId}:
     get:
@@ -60,7 +60,7 @@ paths:
                 type: object
                 properties:
                   post:
-                    $ref: '#/components/schemas/x_post'
+                    $ref: '#/components/schemas/xPost'
 
   /v1/x/posts:
     get:
@@ -79,7 +79,7 @@ paths:
             type: string
         - name: username
           in: query
-          description: ユーザー名(@は含まない)。
+          description: ユーザー名(@は含まない)。
           required: false
           schema:
             type: string
@@ -104,33 +104,24 @@ paths:
                 type: object
                 properties:
                   user:
-                    $ref: '#/components/schemas/x_user'
+                    $ref: '#/components/schemas/xUser'
                   posts:
                     type: array
                     description: List of posts.
                     items:
-                      $ref: '#/components/schemas/x_post'
-                  related_posts:
+                      $ref: '#/components/schemas/xPost'
+                  relatedPosts:
                     type: array
                     items:
                       type: array
                       items:
-                        $ref: '#/components/schemas/x_relate_post'
-        '500':
-          description: Internal server error.
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    type: string
+                        $ref: '#/components/schemas/xRelatePost'
 
   /x-text:
     get:
       tags:
         - x
-      summary: テキストデータの解析
+      summary: テキストデータの解析
       description: 投稿のテキストの文字数をカウントします。
       parameters:
         - name: text
@@ -145,20 +136,12 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/x_text'
-        '500':
-          description: Internal server error.
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    type: string
+                $ref: '#/components/schemas/xText'
+
     post:
         tags:
           - x
-        summary: テキストデータの解析
+        summary: テキストデータの解析
         description: 投稿のテキストの文字数をカウントします。
         requestBody:
           content:
@@ -176,22 +159,13 @@ paths:
             content:
               application/json:
                 schema:
-                  $ref: '#/components/schemas/x_text'
-          '500':
-            description: Internal server error.
-            content:
-              application/json:
-                schema:
-                  type: object
-                  properties:
-                    message:
-                      type: string
+                  $ref: '#/components/schemas/xText'
 
   /v1/youtube/songs:
     get:
       tags:
         - YouTube
-      summary: リリースされたアルバムのリストを返します。
+      summary: リリースされたアルバムのリストを返します。
       parameters:
         - name: channelid
           in: query
@@ -209,23 +183,13 @@ paths:
                   songs:
                     type: array
                     items:
-                      $ref: '#/components/schemas/youtube_video'
-        '429':
-          description: Rate limit exceeded
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    type: string
-                    example: "Rate limit exceeded. Please try again later."
+                      $ref: '#/components/schemas/youtubeVideo'
 
   /v1/youtube/releases:
     get:
       tags:
         - YouTube
-      summary: リリースされたアルバムのリストを返します。
+      summary: リリースされたアルバムのリストを返します。
       parameters:
         - name: channelid
           in: query
@@ -247,7 +211,7 @@ paths:
                       properties:
                         id:
                           type: string
-                        release_id:
+                        releaseId:
                           type: string
                         type:
                           type: string # To Do
@@ -255,25 +219,14 @@ paths:
                           type: string
                         year:
                           type: integer
-                        thumbnail_url:
+                        thumbnailUrl:
                           type: string
-
-        '429':
-          description: Rate limit exceeded
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    type: string
-                    example: "Rate limit exceeded. Please try again later."
 
   /v1/youtube/release:
     get:
       tags:
         - YouTube
-      summary: リリースされたアルバムのリストを返します。
+      summary: リリースされたアルバムのリストを返します。
       parameters:
         - name: releaseid
           in: query
@@ -290,26 +243,15 @@ paths:
                 type: object
                 properties:
                   release:
-                    $ref: '#/components/schemas/youtube_releases'
+                    $ref: '#/components/schemas/youtubeReleases'
                   releaseItems:
                     type: array
                     items:
-                      $ref: '#/components/schemas/youtube_release'
+                      $ref: '#/components/schemas/youtubeRelease'
                   releaseItemsVideos:
                     type: array
                     items:
-                      $ref: '#/components/schemas/youtube_video'
-
-        '429':
-          description: Rate limit exceeded
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    type: string
-                    example: "Rate limit exceeded. Please try again later."
+                      $ref: '#/components/schemas/youtubeVideo'
 
   /jwt/apple/music/{name}:
     get:
@@ -341,46 +283,46 @@ components:
 
   schemas:
 
-    x_user:
+    xUser:
       type: object
       description: User information.
       properties:
         id:
           type: string
-        display_name:
+        displayName:
           type: string
-        profile_image_url:
+        profileImageUrl:
           type: string
-        user_name:
+        userName:
           type: string
-        user_name_history:
+        userNameHistory:
           type: array
           items:
             type: string
-        post_last_updated:
+        postLastUpdated:
           type: string
           format: date-time
-        user_last_updated:
+        userLastUpdated:
           type: string
           format: date-time
 
-    x_post:
+    xPost:
       type: object
       properties:
         id:
           type: string
         text:
           type: string
-        published_at:
+        publishedAt:
           type: string
           format: date-time
-        user_id:
+        userId:
           type: string
-        reply_id:
+        replyId:
           type: string
-        repost_id:
+        repostId:
           type: string
-        quote_repost_id:
+        quoteRepostId:
           type: string
         urls:
           type: array
@@ -395,16 +337,16 @@ components:
                 type: string
               type:
                 type: string
-              source_post_id:
+              sourcePostId:
                 type: string
-              source_user_id:
+              sourceUserId:
                 type: string
               media:
                 type: object
                 properties:
                   url:
                     type: string
-                  aspect_ratio:
+                  aspectRatio:
                     type: object
                     properties:
                       width:
@@ -420,10 +362,8 @@ components:
                     type: integer
                   height:
                     type: integer
-        media_type_version:
-            type: string
 
-    x_text:
+    xText:
       type: object
       properties:
         weightedLength:
@@ -441,30 +381,30 @@ components:
         displayRangeEnd:
           type: number
 
-    x_relate_post:
+    xRelatePost:
       allOf:
-        - $ref: '#/components/schemas/x_post'
+        - $ref: '#/components/schemas/xPost'
         - type: object
           properties:
-            reply_by_ids:
+            replyByIds:
               type: array
               items:
                 type: string
-            reposted_by_ids:
+            repostedByIds:
               type: array
               items:
                 type: string
-            quote_repost_by_ids:
+            quoteRepostByIds:
               type: array
               items:
                 type: string
 
-    youtube_releases:
+    youtubeReleases:
       type: object
       properties:
         id:
           type: string
-        release_id:
+        releaseId:
           type: string
         type:
           type: string # To Do
@@ -472,60 +412,60 @@ components:
           type: string
         year:
           type: integer
-        thumbnail_url:
+        thumbnailUrl:
           type: string
         duration:
           type: integer
-        artist_channel_ids:
+        artistChannelIds:
           type: array
           items:
             type: string
-        created_at:
+        createdAt:
           type: string
           format: date-time
-        last_updated:
+        lastUpdated:
           type: string
           format: date-time
 
-    youtube_release:
+    youtubeRelease:
       type: object
       properties:
         id:
           type: string
-        list_index:
+        listIndex:
          type: integer
         title:
           type: string
-        video_id:
+        videoId:
           type: string
         duration:
           type: integer
-        release_video_id:
+        releaseVideoId:
           type: string
-        playlist_id:
+        playlistId:
           type: string
 
-    youtube_video:
+    youtubeVideo:
       type: object
       properties:
         id:
           type: string
-        owner_channel_id:
+        ownerChannelId:
           type: string
-        channel_id:
+        channelId:
           type: string
-        published_at:
+        publishedAt:
           type: string
           format: date-time
-        privacy_status:
+        privacyStatus:
           type: string
         short:
           type: boolean
-        music_type:
+        musicType:
           type: string
-        thumbnail_url:
+        thumbnailUrl:
           type: string
-        artist_id:
+        artistId:
           type: array
           items:
             type: string

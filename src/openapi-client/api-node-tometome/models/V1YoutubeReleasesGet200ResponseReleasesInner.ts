@@ -75,11 +75,11 @@ export function V1YoutubeReleasesGet200ResponseReleasesInnerFromJSONTyped(json: 
     return {
         
         'id': json['id'] == null ? undefined : json['id'],
-        'releaseId': json['release_id'] == null ? undefined : json['release_id'],
+        'releaseId': json['releaseId'] == null ? undefined : json['releaseId'],
         'type': json['type'] == null ? undefined : json['type'],
         'title': json['title'] == null ? undefined : json['title'],
         'year': json['year'] == null ? undefined : json['year'],
-        'thumbnailUrl': json['thumbnail_url'] == null ? undefined : json['thumbnail_url'],
+        'thumbnailUrl': json['thumbnailUrl'] == null ? undefined : json['thumbnailUrl'],
     };
 }
 
@@ -95,11 +95,11 @@ export function V1YoutubeReleasesGet200ResponseReleasesInnerToJSONTyped(value?: 
     return {
         
         'id': value['id'],
-        'release_id': value['releaseId'],
+        'releaseId': value['releaseId'],
         'type': value['type'],
         'title': value['title'],
         'year': value['year'],
-        'thumbnail_url': value['thumbnailUrl'],
+        'thumbnailUrl': value['thumbnailUrl'],
     };
 }
 
