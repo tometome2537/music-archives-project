@@ -59,7 +59,7 @@ export function XPostMediasInnerMediaFromJSONTyped(json: any, ignoreDiscriminato
     return {
         
         'url': json['url'] == null ? undefined : json['url'],
-        'aspectRatio': json['aspect_ratio'] == null ? undefined : XPostMediasInnerMediaAspectRatioFromJSON(json['aspect_ratio']),
+        'aspectRatio': json['aspectRatio'] == null ? undefined : XPostMediasInnerMediaAspectRatioFromJSON(json['aspectRatio']),
     };
 }
 
@@ -75,7 +75,7 @@ export function XPostMediasInnerMediaToJSONTyped(value?: XPostMediasInnerMedia |
     return {
         
         'url': value['url'],
-        'aspect_ratio': XPostMediasInnerMediaAspectRatioToJSON(value['aspectRatio']),
+        'aspectRatio': XPostMediasInnerMediaAspectRatioToJSON(value['aspectRatio']),
     };
 }
 

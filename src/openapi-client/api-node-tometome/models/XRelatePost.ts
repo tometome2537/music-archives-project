@@ -83,12 +83,6 @@ export interface XRelatePost {
     medias?: Array<XPostMediasInner>;
     /**
      * 
-     * @type {string}
-     * @memberof XRelatePost
-     */
-    mediaTypeVersion?: string;
-    /**
-     * 
      * @type {Array<string>}
      * @memberof XRelatePost
      */
@@ -126,17 +120,16 @@ export function XRelatePostFromJSONTyped(json: any, ignoreDiscriminator: boolean
         
         'id': json['id'] == null ? undefined : json['id'],
         'text': json['text'] == null ? undefined : json['text'],
-        'publishedAt': json['published_at'] == null ? undefined : (new Date(json['published_at'])),
-        'userId': json['user_id'] == null ? undefined : json['user_id'],
-        'replyId': json['reply_id'] == null ? undefined : json['reply_id'],
-        'repostId': json['repost_id'] == null ? undefined : json['repost_id'],
-        'quoteRepostId': json['quote_repost_id'] == null ? undefined : json['quote_repost_id'],
+        'publishedAt': json['publishedAt'] == null ? undefined : (new Date(json['publishedAt'])),
+        'userId': json['userId'] == null ? undefined : json['userId'],
+        'replyId': json['replyId'] == null ? undefined : json['replyId'],
+        'repostId': json['repostId'] == null ? undefined : json['repostId'],
+        'quoteRepostId': json['quoteRepostId'] == null ? undefined : json['quoteRepostId'],
         'urls': json['urls'] == null ? undefined : json['urls'],
         'medias': json['medias'] == null ? undefined : ((json['medias'] as Array<any>).map(XPostMediasInnerFromJSON)),
-        'mediaTypeVersion': json['media_type_version'] == null ? undefined : json['media_type_version'],
-        'replyByIds': json['reply_by_ids'] == null ? undefined : json['reply_by_ids'],
-        'repostedByIds': json['reposted_by_ids'] == null ? undefined : json['reposted_by_ids'],
-        'quoteRepostByIds': json['quote_repost_by_ids'] == null ? undefined : json['quote_repost_by_ids'],
+        'replyByIds': json['replyByIds'] == null ? undefined : json['replyByIds'],
+        'repostedByIds': json['repostedByIds'] == null ? undefined : json['repostedByIds'],
+        'quoteRepostByIds': json['quoteRepostByIds'] == null ? undefined : json['quoteRepostByIds'],
     };
 }
 
@@ -153,17 +146,16 @@ export function XRelatePostToJSONTyped(value?: XRelatePost | null, ignoreDiscrim
         
         'id': value['id'],
         'text': value['text'],
-        'published_at': value['publishedAt'] == null ? value['publishedAt'] : value['publishedAt'].toISOString(),
-        'user_id': value['userId'],
-        'reply_id': value['replyId'],
-        'repost_id': value['repostId'],
-        'quote_repost_id': value['quoteRepostId'],
+        'publishedAt': value['publishedAt'] == null ? value['publishedAt'] : value['publishedAt'].toISOString(),
+        'userId': value['userId'],
+        'replyId': value['replyId'],
+        'repostId': value['repostId'],
+        'quoteRepostId': value['quoteRepostId'],
         'urls': value['urls'],
         'medias': value['medias'] == null ? undefined : ((value['medias'] as Array<any>).map(XPostMediasInnerToJSON)),
-        'media_type_version': value['mediaTypeVersion'],
-        'reply_by_ids': value['replyByIds'],
-        'reposted_by_ids': value['repostedByIds'],
-        'quote_repost_by_ids': value['quoteRepostByIds'],
+        'replyByIds': value['replyByIds'],
+        'repostedByIds': value['repostedByIds'],
+        'quoteRepostByIds': value['quoteRepostByIds'],
     };
 }
 

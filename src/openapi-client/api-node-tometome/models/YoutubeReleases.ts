@@ -99,15 +99,15 @@ export function YoutubeReleasesFromJSONTyped(json: any, ignoreDiscriminator: boo
     return {
         
         'id': json['id'] == null ? undefined : json['id'],
-        'releaseId': json['release_id'] == null ? undefined : json['release_id'],
+        'releaseId': json['releaseId'] == null ? undefined : json['releaseId'],
         'type': json['type'] == null ? undefined : json['type'],
         'title': json['title'] == null ? undefined : json['title'],
         'year': json['year'] == null ? undefined : json['year'],
-        'thumbnailUrl': json['thumbnail_url'] == null ? undefined : json['thumbnail_url'],
+        'thumbnailUrl': json['thumbnailUrl'] == null ? undefined : json['thumbnailUrl'],
         'duration': json['duration'] == null ? undefined : json['duration'],
-        'artistChannelIds': json['artist_channel_ids'] == null ? undefined : json['artist_channel_ids'],
-        'createdAt': json['created_at'] == null ? undefined : (new Date(json['created_at'])),
-        'lastUpdated': json['last_updated'] == null ? undefined : (new Date(json['last_updated'])),
+        'artistChannelIds': json['artistChannelIds'] == null ? undefined : json['artistChannelIds'],
+        'createdAt': json['createdAt'] == null ? undefined : (new Date(json['createdAt'])),
+        'lastUpdated': json['lastUpdated'] == null ? undefined : (new Date(json['lastUpdated'])),
     };
 }
 
@@ -123,15 +123,15 @@ export function YoutubeReleasesToJSONTyped(value?: YoutubeReleases | null, ignor
     return {
         
         'id': value['id'],
-        'release_id': value['releaseId'],
+        'releaseId': value['releaseId'],
         'type': value['type'],
         'title': value['title'],
         'year': value['year'],
-        'thumbnail_url': value['thumbnailUrl'],
+        'thumbnailUrl': value['thumbnailUrl'],
         'duration': value['duration'],
-        'artist_channel_ids': value['artistChannelIds'],
-        'created_at': value['createdAt'] == null ? value['createdAt'] : value['createdAt'].toISOString(),
-        'last_updated': value['lastUpdated'] == null ? value['lastUpdated'] : value['lastUpdated'].toISOString(),
+        'artistChannelIds': value['artistChannelIds'],
+        'createdAt': value['createdAt'] == null ? value['createdAt'] : value['createdAt'].toISOString(),
+        'lastUpdated': value['lastUpdated'] == null ? value['lastUpdated'] : value['lastUpdated'].toISOString(),
     };
 }
 

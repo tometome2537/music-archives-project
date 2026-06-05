@@ -28,11 +28,6 @@ import {
     V1YoutubeSongsGet200ResponseFromJSON,
     V1YoutubeSongsGet200ResponseToJSON,
 } from '../models/V1YoutubeSongsGet200Response';
-import {
-    type V1YoutubeSongsGet429Response,
-    V1YoutubeSongsGet429ResponseFromJSON,
-    V1YoutubeSongsGet429ResponseToJSON,
-} from '../models/V1YoutubeSongsGet429Response';
 
 export interface V1YoutubeReleaseGetRequest {
     releaseid: string;
@@ -82,7 +77,7 @@ export class YouTubeApi extends runtime.BaseAPI {
     }
 
     /**
-     * リリースされたアルバムのリストを返します。
+     * リリースされたアルバムのリストを返します。
      */
     async v1YoutubeReleaseGetRaw(requestParameters: V1YoutubeReleaseGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1YoutubeReleaseGet200Response>> {
         const requestOptions = await this.v1YoutubeReleaseGetRequestOpts(requestParameters);
@@ -92,7 +87,7 @@ export class YouTubeApi extends runtime.BaseAPI {
     }
 
     /**
-     * リリースされたアルバムのリストを返します。
+     * リリースされたアルバムのリストを返します。
      */
     async v1YoutubeReleaseGet(requestParameters: V1YoutubeReleaseGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1YoutubeReleaseGet200Response> {
         const response = await this.v1YoutubeReleaseGetRaw(requestParameters, initOverrides);
@@ -130,7 +125,7 @@ export class YouTubeApi extends runtime.BaseAPI {
     }
 
     /**
-     * リリースされたアルバムのリストを返します。
+     * リリースされたアルバムのリストを返します。
      */
     async v1YoutubeReleasesGetRaw(requestParameters: V1YoutubeReleasesGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1YoutubeReleasesGet200Response>> {
         const requestOptions = await this.v1YoutubeReleasesGetRequestOpts(requestParameters);
@@ -140,7 +135,7 @@ export class YouTubeApi extends runtime.BaseAPI {
     }
 
     /**
-     * リリースされたアルバムのリストを返します。
+     * リリースされたアルバムのリストを返します。
      */
     async v1YoutubeReleasesGet(requestParameters: V1YoutubeReleasesGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1YoutubeReleasesGet200Response> {
         const response = await this.v1YoutubeReleasesGetRaw(requestParameters, initOverrides);
@@ -178,7 +173,7 @@ export class YouTubeApi extends runtime.BaseAPI {
     }
 
     /**
-     * リリースされたアルバムのリストを返します。
+     * リリースされたアルバムのリストを返します。
      */
     async v1YoutubeSongsGetRaw(requestParameters: V1YoutubeSongsGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V1YoutubeSongsGet200Response>> {
         const requestOptions = await this.v1YoutubeSongsGetRequestOpts(requestParameters);
@@ -188,7 +183,7 @@ export class YouTubeApi extends runtime.BaseAPI {
     }
 
     /**
-     * リリースされたアルバムのリストを返します。
+     * リリースされたアルバムのリストを返します。
      */
     async v1YoutubeSongsGet(requestParameters: V1YoutubeSongsGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V1YoutubeSongsGet200Response> {
         const response = await this.v1YoutubeSongsGetRaw(requestParameters, initOverrides);

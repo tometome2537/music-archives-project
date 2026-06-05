@@ -7,8 +7,8 @@ All URIs are relative to *https://api.node.tometome.giize.com*
 | [**v1XPostPostIdGet**](XApi.md#v1xpostpostidget) | **GET** /v1/x/post/{postId} |  |
 | [**v1XPostsGet**](XApi.md#v1xpostsget) | **GET** /v1/x/posts | Retrieve posts and user data |
 | [**v1XUserGet**](XApi.md#v1xuserget) | **GET** /v1/x/user | Retrieve user data |
-| [**xTextGet**](XApi.md#xtextget) | **GET** /x-text | テキストデータの解析 |
-| [**xTextPost**](XApi.md#xtextpostoperation) | **POST** /x-text | テキストデータの解析 |
+| [**xTextGet**](XApi.md#xtextget) | **GET** /x-text | テキストデータの解析 |
+| [**xTextPost**](XApi.md#xtextpostoperation) | **POST** /x-text | テキストデータの解析 |
 
 
 
@@ -109,7 +109,7 @@ async function example() {
   const body = {
     // string | The ID of the user whose posts are to be retrieved. (optional)
     userid: userid_example,
-    // string | ユーザー名(@は含まない)。 (optional)
+    // string | ユーザー名(@は含まない)。 (optional)
     username: username_example,
     // boolean | The ID of a specific post to retrieve. (optional)
     relatedposts: true,
@@ -135,7 +135,7 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **userid** | `string` | The ID of the user whose posts are to be retrieved. | [Optional] [Defaults to `undefined`] |
-| **username** | `string` | ユーザー名(@は含まない)。 | [Optional] [Defaults to `undefined`] |
+| **username** | `string` | ユーザー名(@は含まない)。 | [Optional] [Defaults to `undefined`] |
 | **relatedposts** | `boolean` | The ID of a specific post to retrieve. | [Optional] [Defaults to `undefined`] |
 | **count** | `number` | 取得する件数 | [Optional] [Defaults to `undefined`] |
 
@@ -157,7 +157,6 @@ example().catch(console.error);
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful response with user and posts data. |  -  |
-| **500** | Internal server error. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
@@ -240,7 +239,7 @@ example().catch(console.error);
 
 > XText xTextGet(text)
 
-テキストデータの解析
+テキストデータの解析
 
 投稿のテキストの文字数をカウントします。
 
@@ -299,7 +298,6 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | テキスト解析の結果 |  -  |
-| **500** | Internal server error. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
@@ -308,7 +306,7 @@ No authorization required
 
 > XText xTextPost(xTextPostRequest)
 
-テキストデータの解析
+テキストデータの解析
 
 投稿のテキストの文字数をカウントします。
 
@@ -367,7 +365,6 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | テキスト解析の結果 |  -  |
-| **500** | Internal server error. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 

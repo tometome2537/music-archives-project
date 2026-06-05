@@ -24,11 +24,6 @@ import {
     V1XPostsGet200ResponseToJSON,
 } from '../models/V1XPostsGet200Response';
 import {
-    type V1XPostsGet500Response,
-    V1XPostsGet500ResponseFromJSON,
-    V1XPostsGet500ResponseToJSON,
-} from '../models/V1XPostsGet500Response';
-import {
     type XText,
     XTextFromJSON,
     XTextToJSON,
@@ -262,7 +257,7 @@ export class XApi extends runtime.BaseAPI {
 
     /**
      * 投稿のテキストの文字数をカウントします。
-     * テキストデータの解析
+     * テキストデータの解析
      */
     async xTextGetRaw(requestParameters: XTextGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<XText>> {
         const requestOptions = await this.xTextGetRequestOpts(requestParameters);
@@ -273,7 +268,7 @@ export class XApi extends runtime.BaseAPI {
 
     /**
      * 投稿のテキストの文字数をカウントします。
-     * テキストデータの解析
+     * テキストデータの解析
      */
     async xTextGet(requestParameters: XTextGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<XText> {
         const response = await this.xTextGetRaw(requestParameters, initOverrides);
@@ -304,7 +299,7 @@ export class XApi extends runtime.BaseAPI {
 
     /**
      * 投稿のテキストの文字数をカウントします。
-     * テキストデータの解析
+     * テキストデータの解析
      */
     async xTextPostRaw(requestParameters: XTextPostOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<XText>> {
         const requestOptions = await this.xTextPostRequestOpts(requestParameters);
@@ -315,7 +310,7 @@ export class XApi extends runtime.BaseAPI {
 
     /**
      * 投稿のテキストの文字数をカウントします。
-     * テキストデータの解析
+     * テキストデータの解析
      */
     async xTextPost(requestParameters: XTextPostOperationRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<XText> {
         const response = await this.xTextPostRaw(requestParameters, initOverrides);

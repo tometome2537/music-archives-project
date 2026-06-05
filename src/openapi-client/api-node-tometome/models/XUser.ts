@@ -81,12 +81,12 @@ export function XUserFromJSONTyped(json: any, ignoreDiscriminator: boolean): XUs
     return {
         
         'id': json['id'] == null ? undefined : json['id'],
-        'displayName': json['display_name'] == null ? undefined : json['display_name'],
-        'profileImageUrl': json['profile_image_url'] == null ? undefined : json['profile_image_url'],
-        'userName': json['user_name'] == null ? undefined : json['user_name'],
-        'userNameHistory': json['user_name_history'] == null ? undefined : json['user_name_history'],
-        'postLastUpdated': json['post_last_updated'] == null ? undefined : (new Date(json['post_last_updated'])),
-        'userLastUpdated': json['user_last_updated'] == null ? undefined : (new Date(json['user_last_updated'])),
+        'displayName': json['displayName'] == null ? undefined : json['displayName'],
+        'profileImageUrl': json['profileImageUrl'] == null ? undefined : json['profileImageUrl'],
+        'userName': json['userName'] == null ? undefined : json['userName'],
+        'userNameHistory': json['userNameHistory'] == null ? undefined : json['userNameHistory'],
+        'postLastUpdated': json['postLastUpdated'] == null ? undefined : (new Date(json['postLastUpdated'])),
+        'userLastUpdated': json['userLastUpdated'] == null ? undefined : (new Date(json['userLastUpdated'])),
     };
 }
 
@@ -102,12 +102,12 @@ export function XUserToJSONTyped(value?: XUser | null, ignoreDiscriminator: bool
     return {
         
         'id': value['id'],
-        'display_name': value['displayName'],
-        'profile_image_url': value['profileImageUrl'],
-        'user_name': value['userName'],
-        'user_name_history': value['userNameHistory'],
-        'post_last_updated': value['postLastUpdated'] == null ? value['postLastUpdated'] : value['postLastUpdated'].toISOString(),
-        'user_last_updated': value['userLastUpdated'] == null ? value['userLastUpdated'] : value['userLastUpdated'].toISOString(),
+        'displayName': value['displayName'],
+        'profileImageUrl': value['profileImageUrl'],
+        'userName': value['userName'],
+        'userNameHistory': value['userNameHistory'],
+        'postLastUpdated': value['postLastUpdated'] == null ? value['postLastUpdated'] : value['postLastUpdated'].toISOString(),
+        'userLastUpdated': value['userLastUpdated'] == null ? value['userLastUpdated'] : value['userLastUpdated'].toISOString(),
     };
 }
 

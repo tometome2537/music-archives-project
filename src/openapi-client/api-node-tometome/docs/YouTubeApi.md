@@ -4,9 +4,9 @@ All URIs are relative to *https://api.node.tometome.giize.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**v1YoutubeReleaseGet**](YouTubeApi.md#v1youtubereleaseget) | **GET** /v1/youtube/release | リリースされたアルバムのリストを返します。 |
-| [**v1YoutubeReleasesGet**](YouTubeApi.md#v1youtubereleasesget) | **GET** /v1/youtube/releases | リリースされたアルバムのリストを返します。 |
-| [**v1YoutubeSongsGet**](YouTubeApi.md#v1youtubesongsget) | **GET** /v1/youtube/songs | リリースされたアルバムのリストを返します。 |
+| [**v1YoutubeReleaseGet**](YouTubeApi.md#v1youtubereleaseget) | **GET** /v1/youtube/release | リリースされたアルバムのリストを返します。 |
+| [**v1YoutubeReleasesGet**](YouTubeApi.md#v1youtubereleasesget) | **GET** /v1/youtube/releases | リリースされたアルバムのリストを返します。 |
+| [**v1YoutubeSongsGet**](YouTubeApi.md#v1youtubesongsget) | **GET** /v1/youtube/songs | リリースされたアルバムのリストを返します。 |
 
 
 
@@ -14,7 +14,7 @@ All URIs are relative to *https://api.node.tometome.giize.com*
 
 > V1YoutubeReleaseGet200Response v1YoutubeReleaseGet(releaseid)
 
-リリースされたアルバムのリストを返します。
+リリースされたアルバムのリストを返します。
 
 ### Example
 
@@ -71,7 +71,6 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | YouTube releases |  -  |
-| **429** | Rate limit exceeded |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
@@ -80,7 +79,7 @@ No authorization required
 
 > V1YoutubeReleasesGet200Response v1YoutubeReleasesGet(channelid)
 
-リリースされたアルバムのリストを返します。
+リリースされたアルバムのリストを返します。
 
 ### Example
 
@@ -137,7 +136,6 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | YouTube releases |  -  |
-| **429** | Rate limit exceeded |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
@@ -146,7 +144,7 @@ No authorization required
 
 > V1YoutubeSongsGet200Response v1YoutubeSongsGet(channelid)
 
-リリースされたアルバムのリストを返します。
+リリースされたアルバムのリストを返します。
 
 ### Example
 
@@ -203,7 +201,6 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | YouTube releases |  -  |
-| **429** | Rate limit exceeded |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
