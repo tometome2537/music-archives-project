@@ -28,7 +28,6 @@ type PlayerProps = {
 	// フルスクリーンで表示するかどうか
 	isPlayerFullscreen: boolean;
 	setIsPlayerFullscreen: Dispatch<SetStateAction<boolean>>;
-
 	playerItem: PlayerItem | undefined;
 	setPlayerItem: Dispatch<SetStateAction<PlayerItem | undefined>>;
 	playerPlaylist?: PlaylistType; // プレイリスト
@@ -192,23 +191,16 @@ export default function PlayerView(props: PlayerProps) {
 
 					{/* 詳細情報（フルスクリーン時） */}
 					<PlayerInfo
-						isFullscreen={isPlayerFullscreen}
+						isMobile={isMobile}
+						isPlayerFullscreen={isPlayerFullscreen}
 						playerItem={playerItem}
+						setPlayerItem={setPlayerItem}
+						playerPlaylist={playerPlaylist}
 						title={youTubePlayerState?.getVideoData.title}
 						author={youTubePlayerState?.getVideoData.author}
 						setIsFullscreen={setIsPlayerFullscreen}
 						width={width}
 					/>
-
-					{/* モバイル用プレイリスト */}
-					{isMobile && isPlayerFullscreen && (
-						<PlayerPlaylist
-							isFullscreen={isPlayerFullscreen}
-							isMobile={isMobile}
-							playerPlaylist={playerPlaylist}
-							setPlayerItem={setPlayerItem}
-						/>
-					)}
 				</Box>
 
 				{/* 右カラム（デスクトップ用プレイリスト） */}
