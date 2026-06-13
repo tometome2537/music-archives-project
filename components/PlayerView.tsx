@@ -107,9 +107,7 @@ export default function PlayerView(props: PlayerProps) {
 	const artworkAlt = musicKit.instance?.nowPlayingItem?.attributes.name ?? "";
 
 	return (
-		<Box
-			sx={{ overflowY: isPlayerFullscreen && !isMobile ? "hidden" : "auto" }}
-		>
+		<Box sx={{ overflowY: isPlayerFullscreen ? "hidden" : "auto" }}>
 			<Box
 				sx={{
 					position: isPlayerFullscreen ? "fixed" : "relative",
@@ -136,8 +134,7 @@ export default function PlayerView(props: PlayerProps) {
 					WebkitBackdropFilter: isPlayerFullscreen
 						? "blur(15px)"
 						: "blur(20px)",
-					overflowX: "hidden",
-					overflowY: isPlayerFullscreen && isMobile ? "auto" : "hidden",
+					overflow: "hidden",
 					padding: "0",
 					margin: "0",
 					borderTopLeftRadius: isPlayerFullscreen ? "0" : "1em",
