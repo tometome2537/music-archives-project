@@ -26,7 +26,14 @@ export default function PlayerPlaylist({
 	// モバイル表示用プレイリスト
 	if (isMobile && isFullscreen) {
 		return (
-			<>
+			<Box
+				sx={{
+					width: "100%",
+					maxHeight: "100vh",
+					padding: "1rem 0",
+					boxSizing: "border-box",
+				}}
+			>
 				<h3>{playerPlaylist.title}</h3>
 				{playerPlaylist.videos.map((item: PlayerItem) => (
 					<Box
@@ -48,7 +55,7 @@ export default function PlayerPlaylist({
 						/>
 					</Box>
 				))}
-			</>
+			</Box>
 		);
 	}
 
