@@ -35,7 +35,6 @@ export default function PlayerInfo({
 				display: isFullscreen ? "block" : "none",
 				overflowY: "auto",
 				maxHeight: "50vh",
-				paddingBottom: "40vh",
 			}}
 		>
 			{/* 動画タイトル */}
@@ -63,20 +62,7 @@ export default function PlayerInfo({
 			</p>
 
 			{/* 概要欄の上に表示するnode */}
-			{playerItem?.node ? (
-				<Box
-					style={{
-						display: "flex",
-						padding: "8 auto",
-						justifyContent: "center",
-						alignItems: "center",
-						flexWrap: "wrap",
-						gap: "10px",
-					}}
-				>
-					{playerItem?.node}
-				</Box>
-			) : null}
+			{playerItem?.node ? <Box>{playerItem?.node}</Box> : null}
 
 			{/* 概要欄 */}
 			<Box style={{ margin: "0.5em" }}>
