@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
+import type { Dispatch, SetStateAction } from "react";
 import Description from "@/components/Description";
 import PlayerPlaylist from "../Player/PlayerPlaylist";
-import type { Dispatch, SetStateAction } from "react";
 import type { PlayerItem, PlayerPlaylist as PlaylistType } from "./types";
 
 type PlayerInfoProps = {
