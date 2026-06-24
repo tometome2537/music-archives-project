@@ -68,3 +68,5 @@ module.exports = withSentryConfig(module.exports, {
 		return config;
 	},
 });
+
+import('@opennextjs/cloudflare').then(m => m.initOpenNextCloudflareForDev());
