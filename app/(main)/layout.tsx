@@ -474,6 +474,20 @@ export default function RootLayout() {
 		musicSearchSuggestions,
 	]);
 
+	react.useEffect(() => {
+		// スクレイピングは自動化されたブラウザで行われることが多いため、WebDriverを検出してリダイレクトする
+		if (navigator.webdriver === true) {
+			location.href = "https://google.com";
+		}
+
+		// 右クリックを無効化
+		document.oncontextmenu = () => false;
+
+		return () => {
+			document.oncontextmenu = null;
+		};
+	}, []);
+
 	return (
 		<Fragment>
 			<Navbar
