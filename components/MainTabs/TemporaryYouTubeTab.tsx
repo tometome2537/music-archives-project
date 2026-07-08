@@ -352,10 +352,10 @@ export function TemporaryYouTubeTab(props: TemporaryYouTubeTab) {
 											const res = await youtubeApi.v1YoutubeReleaseGet({
 												releaseid: albumsItem.releaseId ?? "",
 											});
-											const tracks = res.releaseItemsVideos ?? [];
+											const tracks = res.releaseItems ?? [];
 											props.setPlayerItem({
 												type: PlayerType.YouTube,
-												mediaId: tracks[0].id,
+												mediaId: tracks[0].releaseVideoId,
 											});
 											if (tracks.length !== 0) {
 												props.setPlayerPlaylist({
@@ -363,7 +363,7 @@ export function TemporaryYouTubeTab(props: TemporaryYouTubeTab) {
 													videos: tracks.map((item) => {
 														return {
 															type: PlayerType.YouTube,
-															mediaId: item.id,
+															mediaId: item.releaseVideoId,
 														};
 													}),
 												});

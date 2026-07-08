@@ -6,7 +6,7 @@
 
 ## 技術仕様
 
-- GitHub 内にある web サイト表示に必要なデータを Vercel（<https://vercel.com）というサービスを利用して公開している。>
+- GitHub 内にある web サイト表示に必要なデータを Vercel（<https://vercel.com>）というサービスを利用して公開している。
 - 使用言語は TypeScript
 
 - 動画一覧を古い順に表示する機能の廃止

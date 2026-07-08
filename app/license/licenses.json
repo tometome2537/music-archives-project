@@ -118,12 +118,12 @@
     "repository": "https://github.com/mui/base-ui",
     "publisher": "MUI Team"
   },
-  "@biomejs/biome@2.5.1": {
+  "@biomejs/biome@2.5.3": {
     "licenses": "MIT OR Apache-2.0",
     "repository": "https://github.com/biomejs/biome",
     "publisher": "Emanuele Stoppa"
   },
-  "@biomejs/cli-darwin-arm64@2.5.1": {
+  "@biomejs/cli-darwin-arm64@2.5.3": {
     "licenses": "MIT OR Apache-2.0",
     "repository": "https://github.com/biomejs/biome"
   },
@@ -245,12 +245,12 @@
     "email": "koujirou0111@gmail.com",
     "url": "https://koozaki.com/"
   },
-  "@mui/core-downloads-tracker@9.1.2": {
+  "@mui/core-downloads-tracker@9.2.0": {
     "licenses": "MIT",
     "repository": "https://github.com/mui/material-ui",
     "publisher": "MUI Team"
   },
-  "@mui/icons-material@9.1.1": {
+  "@mui/icons-material@9.2.0": {
     "licenses": "MIT",
     "repository": "https://github.com/mui/material-ui",
     "publisher": "MUI Team"
@@ -260,12 +260,12 @@
     "repository": "https://github.com/mui/material-ui",
     "publisher": "MUI Team"
   },
-  "@mui/material@9.1.2": {
+  "@mui/material@9.2.0": {
     "licenses": "MIT",
     "repository": "https://github.com/mui/material-ui",
     "publisher": "MUI Team"
   },
-  "@mui/private-theming@9.1.1": {
+  "@mui/private-theming@9.2.0": {
     "licenses": "MIT",
     "repository": "https://github.com/mui/material-ui",
     "publisher": "MUI Team"
@@ -275,7 +275,7 @@
     "repository": "https://github.com/mui/material-ui",
     "publisher": "MUI Team"
   },
-  "@mui/system@9.1.2": {
+  "@mui/system@9.2.0": {
     "licenses": "MIT",
     "repository": "https://github.com/mui/material-ui",
     "publisher": "MUI Team"
@@ -285,17 +285,17 @@
     "repository": "https://github.com/mui/material-ui",
     "publisher": "MUI Team"
   },
-  "@mui/utils@9.1.1": {
+  "@mui/utils@9.2.0": {
     "licenses": "MIT",
     "repository": "https://github.com/mui/material-ui",
     "publisher": "MUI Team"
   },
-  "@mui/x-date-pickers@9.7.0": {
+  "@mui/x-date-pickers@9.8.0": {
     "licenses": "MIT",
     "repository": "https://github.com/mui/mui-x",
     "publisher": "MUI Team"
   },
-  "@mui/x-internals@9.7.0": {
+  "@mui/x-internals@9.8.0": {
     "licenses": "MIT",
     "repository": "https://github.com/mui/mui-x",
     "publisher": "MUI Team"
@@ -314,7 +314,7 @@
     "licenses": "MIT",
     "repository": "https://github.com/vercel/next.js"
   },
-  "@opentelemetry/api-logs@0.214.0": {
+  "@opentelemetry/api-logs@0.220.0": {
     "licenses": "Apache-2.0",
     "repository": "https://github.com/open-telemetry/opentelemetry-js",
     "publisher": "OpenTelemetry Authors"
@@ -324,27 +324,32 @@
     "repository": "https://github.com/open-telemetry/opentelemetry-js",
     "publisher": "OpenTelemetry Authors"
   },
-  "@opentelemetry/core@2.8.0": {
+  "@opentelemetry/core@2.9.0": {
     "licenses": "Apache-2.0",
     "repository": "https://github.com/open-telemetry/opentelemetry-js",
     "publisher": "OpenTelemetry Authors"
   },
-  "@opentelemetry/instrumentation@0.214.0": {
+  "@opentelemetry/instrumentation@0.220.0": {
     "licenses": "Apache-2.0",
     "repository": "https://github.com/open-telemetry/opentelemetry-js",
     "publisher": "OpenTelemetry Authors"
   },
-  "@opentelemetry/resources@2.8.0": {
+  "@opentelemetry/resources@2.9.0": {
     "licenses": "Apache-2.0",
     "repository": "https://github.com/open-telemetry/opentelemetry-js",
     "publisher": "OpenTelemetry Authors"
   },
-  "@opentelemetry/sdk-trace-base@2.8.0": {
+  "@opentelemetry/sdk-trace-base@2.9.0": {
     "licenses": "Apache-2.0",
     "repository": "https://github.com/open-telemetry/opentelemetry-js",
     "publisher": "OpenTelemetry Authors"
   },
-  "@opentelemetry/semantic-conventions@1.41.1": {
+  "@opentelemetry/sdk-trace@2.9.0": {
+    "licenses": "Apache-2.0",
+    "repository": "https://github.com/open-telemetry/opentelemetry-js",
+    "publisher": "OpenTelemetry Authors"
+  },
+  "@opentelemetry/semantic-conventions@1.42.0": {
     "licenses": "Apache-2.0",
     "repository": "https://github.com/open-telemetry/opentelemetry-js",
     "publisher": "OpenTelemetry Authors"
@@ -377,12 +382,12 @@
     "repository": "https://github.com/getsentry/sentry-javascript-bundler-plugins",
     "publisher": "Sentry"
   },
-  "@sentry/browser-utils@10.63.0": {
+  "@sentry/browser-utils@10.64.0": {
     "licenses": "MIT",
     "repository": "https://github.com/getsentry/sentry-javascript",
     "publisher": "Sentry"
   },
-  "@sentry/browser@10.63.0": {
+  "@sentry/browser@10.64.0": {
     "licenses": "MIT",
     "repository": "https://github.com/getsentry/sentry-javascript",
     "publisher": "Sentry"
@@ -401,61 +406,61 @@
     "repository": "https://github.com/getsentry/sentry-cli",
     "publisher": "Sentry"
   },
-  "@sentry/conventions@0.12.0": {
+  "@sentry/conventions@0.15.1": {
     "licenses": "MIT",
     "repository": "https://github.com/getsentry/sentry-conventions"
   },
-  "@sentry/core@10.63.0": {
+  "@sentry/core@10.64.0": {
     "licenses": "MIT",
     "repository": "https://github.com/getsentry/sentry-javascript",
     "publisher": "Sentry"
   },
-  "@sentry/feedback@10.63.0": {
+  "@sentry/feedback@10.64.0": {
     "licenses": "MIT",
     "repository": "https://github.com/getsentry/sentry-javascript",
     "publisher": "Sentry"
   },
-  "@sentry/nextjs@10.63.0": {
+  "@sentry/nextjs@10.64.0": {
     "licenses": "MIT",
     "repository": "https://github.com/getsentry/sentry-javascript",
     "publisher": "Sentry"
   },
-  "@sentry/node-core@10.63.0": {
+  "@sentry/node-core@10.64.0": {
     "licenses": "MIT",
     "repository": "https://github.com/getsentry/sentry-javascript",
     "publisher": "Sentry"
   },
-  "@sentry/node@10.63.0": {
+  "@sentry/node@10.64.0": {
     "licenses": "MIT",
     "repository": "https://github.com/getsentry/sentry-javascript",
     "publisher": "Sentry"
   },
-  "@sentry/opentelemetry@10.63.0": {
+  "@sentry/opentelemetry@10.64.0": {
     "licenses": "MIT",
     "repository": "https://github.com/getsentry/sentry-javascript",
     "publisher": "Sentry"
   },
-  "@sentry/react@10.63.0": {
+  "@sentry/react@10.64.0": {
     "licenses": "MIT",
     "repository": "https://github.com/getsentry/sentry-javascript",
     "publisher": "Sentry"
   },
-  "@sentry/replay-canvas@10.63.0": {
+  "@sentry/replay-canvas@10.64.0": {
     "licenses": "MIT",
     "repository": "https://github.com/getsentry/sentry-javascript",
     "publisher": "Sentry"
   },
-  "@sentry/replay@10.63.0": {
+  "@sentry/replay@10.64.0": {
     "licenses": "MIT",
     "repository": "https://github.com/getsentry/sentry-javascript",
     "publisher": "Sentry"
   },
-  "@sentry/server-utils@10.63.0": {
+  "@sentry/server-utils@10.64.0": {
     "licenses": "MIT",
     "repository": "https://github.com/getsentry/sentry-javascript",
     "publisher": "Sentry"
   },
-  "@sentry/vercel-edge@10.63.0": {
+  "@sentry/vercel-edge@10.64.0": {
     "licenses": "MIT",
     "repository": "https://github.com/getsentry/sentry-javascript",
     "publisher": "Sentry"
@@ -483,7 +488,7 @@
     "licenses": "MIT",
     "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped"
   },
-  "@types/node@24.13.2": {
+  "@types/node@24.13.3": {
     "licenses": "MIT",
     "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped"
   },
@@ -502,6 +507,11 @@
   "@types/react@19.2.17": {
     "licenses": "MIT",
     "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped"
+  },
+  "@typescript/typescript-darwin-arm64@7.0.2": {
+    "licenses": "Apache-2.0",
+    "repository": "https://github.com/microsoft/TypeScript",
+    "publisher": "Microsoft Corp."
   },
   "@webassemblyjs/ast@1.14.1": {
     "licenses": "MIT",
@@ -595,12 +605,6 @@
     "publisher": "Isaac Z. Schlueter",
     "email": "i@izs.me"
   },
-  "acorn-import-attributes@1.9.5": {
-    "licenses": "MIT",
-    "repository": "https://github.com/xtuc/acorn-import-attributes",
-    "publisher": "Sven Sauleau",
-    "email": "sven@sauleau.com"
-  },
   "acorn-import-phases@1.0.4": {
     "licenses": "MIT",
     "repository": "https://github.com/nicolo-ribaudo/acorn-import-phases",
@@ -674,11 +678,11 @@
     "licenses": "MIT",
     "repository": "https://github.com/juliangruber/balanced-match"
   },
-  "baseline-browser-mapping@2.10.40": {
+  "baseline-browser-mapping@2.10.42": {
     "licenses": "Apache-2.0",
     "repository": "https://github.com/web-platform-dx/baseline-browser-mapping"
   },
-  "brace-expansion@1.1.15": {
+  "brace-expansion@1.1.16": {
     "licenses": "MIT",
     "repository": "https://github.com/juliangruber/brace-expansion",
     "publisher": "Julian Gruber",
@@ -689,7 +693,7 @@
     "licenses": "MIT",
     "repository": "https://github.com/juliangruber/brace-expansion"
   },
-  "browserslist@4.28.4": {
+  "browserslist@4.28.5": {
     "licenses": "MIT",
     "repository": "https://github.com/browserslist/browserslist",
     "publisher": "Andrey Sitnik",
@@ -706,7 +710,7 @@
     "email": "sindresorhus@gmail.com",
     "url": "sindresorhus.com"
   },
-  "caniuse-lite@1.0.30001800": {
+  "caniuse-lite@1.0.30001803": {
     "licenses": "CC-BY-4.0",
     "repository": "https://github.com/browserslist/caniuse-lite",
     "publisher": "Ben Briggs",
@@ -789,13 +793,6 @@
     "email": "thlorenz@gmx.de",
     "url": "http://thlorenz.com"
   },
-  "core-js-pure@3.49.0": {
-    "licenses": "MIT",
-    "repository": "https://github.com/zloirock/core-js",
-    "publisher": "Denis Pushkarev",
-    "email": "zloirock@zloirock.ru",
-    "url": "http://zloirock.ru"
-  },
   "cosmiconfig@7.1.0": {
     "licenses": "MIT",
     "repository": "https://github.com/davidtheclark/cosmiconfig",
@@ -860,12 +857,12 @@
     "licenses": "BSD-2-Clause",
     "repository": "https://github.com/motdotla/dotenv"
   },
-  "electron-to-chromium@1.5.383": {
+  "electron-to-chromium@1.5.389": {
     "licenses": "ISC",
     "repository": "https://github.com/Kilian/electron-to-chromium",
     "publisher": "Kilian Valkhof"
   },
-  "enhanced-resolve@5.24.1": {
+  "enhanced-resolve@5.24.2": {
     "licenses": "MIT",
     "repository": "https://github.com/webpack/enhanced-resolve",
     "publisher": "Tobias Koppers @sokra"
@@ -880,7 +877,7 @@
     "publisher": "Jordan Harband",
     "email": "ljharb@gmail.com"
   },
-  "es-module-lexer@2.2.0": {
+  "es-module-lexer@2.3.0": {
     "licenses": "MIT",
     "repository": "https://github.com/guybedford/es-module-lexer",
     "publisher": "Guy Bedford"
@@ -1058,7 +1055,7 @@
     "email": "sindresorhus@gmail.com",
     "url": "https://sindresorhus.com"
   },
-  "import-in-the-middle@3.2.0": {
+  "import-in-the-middle@3.3.1": {
     "licenses": "Apache-2.0",
     "repository": "https://github.com/nodejs/import-in-the-middle",
     "publisher": "Bryan English",
@@ -1194,7 +1191,7 @@
     "publisher": "Andres Suarez",
     "email": "zertosh@gmail.com"
   },
-  "lru-cache@11.5.1": {
+  "lru-cache@11.5.2": {
     "licenses": "BlueOak-1.0.0",
     "repository": "https://github.com/isaacs/node-lru-cache",
     "publisher": "Isaac Z. Schlueter",
@@ -1433,7 +1430,7 @@
     "repository": "https://github.com/alexeyraspopov/picocolors",
     "publisher": "Alexey Raspopov"
   },
-  "picomatch@4.0.4": {
+  "picomatch@4.0.5": {
     "licenses": "MIT",
     "repository": "https://github.com/micromatch/picomatch",
     "publisher": "Jon Schlinkert",
@@ -1707,7 +1704,7 @@
     "repository": "https://github.com/webpack/tapable",
     "publisher": "Tobias Koppers @sokra"
   },
-  "terser@5.48.0": {
+  "terser@5.49.0": {
     "licenses": "BSD-2-Clause",
     "repository": "https://github.com/terser/terser",
     "publisher": "Mihai Bazon",
@@ -1742,7 +1739,7 @@
     "email": "sindresorhus@gmail.com",
     "url": "sindresorhus.com"
   },
-  "typescript@6.0.3": {
+  "typescript@7.0.2": {
     "licenses": "Apache-2.0",
     "repository": "https://github.com/microsoft/TypeScript",
     "publisher": "Microsoft Corp."
@@ -1784,12 +1781,12 @@
     "email": "d@domenic.me",
     "url": "https://domenic.me/"
   },
-  "webpack-sources@3.5.0": {
+  "webpack-sources@3.5.1": {
     "licenses": "MIT",
     "repository": "https://github.com/webpack/webpack-sources",
     "publisher": "Tobias Koppers @sokra"
   },
-  "webpack@5.108.3": {
+  "webpack@5.108.4": {
     "licenses": "MIT",
     "repository": "https://github.com/webpack/webpack",
     "publisher": "Tobias Koppers @sokra"
