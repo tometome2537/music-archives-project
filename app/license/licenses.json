@@ -513,6 +513,11 @@
     "repository": "https://github.com/microsoft/TypeScript",
     "publisher": "Microsoft Corp."
   },
+  "@typescript/typescript6@6.0.2": {
+    "licenses": "Apache-2.0",
+    "repository": "https://github.com/microsoft/TypeScript",
+    "publisher": "Microsoft Corp."
+  },
   "@webassemblyjs/ast@1.14.1": {
     "licenses": "MIT",
     "repository": "https://github.com/xtuc/webassemblyjs",
@@ -1738,6 +1743,11 @@
     "publisher": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",
     "url": "sindresorhus.com"
+  },
+  "typescript@6.0.3": {
+    "licenses": "Apache-2.0",
+    "repository": "https://github.com/microsoft/TypeScript",
+    "publisher": "Microsoft Corp."
   },
   "typescript@7.0.2": {
     "licenses": "Apache-2.0",
