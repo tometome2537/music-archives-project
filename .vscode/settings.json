@@ -1,4 +1,8 @@
 {
 	"editor.defaultFormatter": "biomejs.biome",
-	"editor.formatOnSave": true
+	"editor.formatOnSave": true,
+	"files.trimTrailingWhitespace": true,
+	"editor.renderWhitespace": "trailing",
+	"html.autoClosingTags": true,
+	"editor.linkedEditing": true
 }
