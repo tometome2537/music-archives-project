@@ -33,7 +33,9 @@ export const ThemeRegistry = (props: {
 	children: React.ReactNode;
 	initColorMode: ColorModeChoice;
 }) => {
-	const prefersInit = useMediaQuery("(prefers-color-scheme: dark)")
+	const prefersInit = useMediaQuery("(prefers-color-scheme: dark)", {
+		defaultMatches: true, // デフォルトをダークモードにすることで、深夜にサイトを開いた際の一瞬の白背景を防ぐ。
+	})
 		? "dark"
 		: "light";
 
