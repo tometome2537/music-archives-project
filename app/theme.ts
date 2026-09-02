@@ -2,7 +2,14 @@
 
 import { createTheme } from "@mui/material";
 
+const commonTheme = {
+	typography: {
+		fontFamily: "var(--font-default), Arial, Helvetica, sans-serif",
+	},
+};
+
 export const lightTheme = createTheme({
+	...commonTheme,
 	palette: {
 		mode: "light", // 状態に基づいてライトまたはダークモードを選択
 		// primaryはアプリケーションの主要な色で、最も頻繁に使われる色
@@ -45,6 +52,7 @@ export const lightTheme = createTheme({
 });
 
 export const darkTheme = createTheme({
+	...commonTheme,
 	palette: {
 		mode: "dark", // 状態に基づいてライトまたはダークモードを選択
 		// primaryはアプリケーションの主要な色で、最も頻繁に使われる色
