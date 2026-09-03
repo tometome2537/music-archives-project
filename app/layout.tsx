@@ -2,16 +2,22 @@ import { CssBaseline } from "@mui/material";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v16-appRouter";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Geist, Noto_Sans_JP } from "next/font/google";
+import "./globals.css";
 import { cookies } from "next/headers";
 import { ApiDataProvider } from "@/contexts/ApiDataContext";
 import { AppleMusicProvider } from "@/contexts/AppleMusicContext";
 import { BrowserInfoProvider } from "@/contexts/BrowserInfoContext";
 import { type ColorModeChoice, ThemeRegistry } from "@/contexts/ThemeContext";
 
+// 英語、数字用フォント
 const geistSans = Geist({
 	variable: "--font-geist-sans",
 	subsets: ["latin"],
+});
+// 日本語フォント
+const fontNotoSansJP = Noto_Sans_JP({
+	variable: "--font-noto-sans-jp",
 });
 
 // const title = "ミュージックアーカイブスプロジェクト";
@@ -74,13 +80,16 @@ export default async function RootLayout({
 			: "device";
 
 	return (
-		<html lang="ja">
+		<html
+			lang="ja"
+			className={`${geistSans.variable} ${fontNotoSansJP.variable}`}
+		>
 			<head>
 				{process.env.NEXT_PUBLIC_STAGE !== "dev" && (
 					<GoogleAnalytics gaId="G-EGPYKGH18H" />
 				)}
 			</head>
-			<body className={geistSans.variable}>
+			<body>
 				<AppRouterCacheProvider options={{ key: "mui", prepend: true }}>
 					<ThemeRegistry initColorMode={initColorMode}>
 						<AppleMusicProvider>

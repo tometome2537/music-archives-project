@@ -4,7 +4,7 @@ import { createTheme } from "@mui/material";
 
 const commonTheme = {
 	typography: {
-		fontFamily: "var(--font-default), Arial, Helvetica, sans-serif",
+		fontFamily: "var(--font-default)",
 	},
 };
 
