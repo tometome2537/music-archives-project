@@ -31,7 +31,7 @@ module.exports = nextConfig;
 
 // Injected content via Sentry wizard below
 
-const { withSentryConfig } = require("@sentry/nextjs");
+const { withSentryConfig } = require("@sentry/nextjs/config");
 
 module.exports = withSentryConfig(module.exports, {
 	// For all available options, see:
@@ -57,14 +57,10 @@ module.exports = withSentryConfig(module.exports, {
 	// side errors will fail.
 	tunnelRoute: "/monitoring",
 
-	// ✔ 新方式（重要）
-	webpack: (config) => {
-		config.treeshake = {
+	webpack: {
+		treeshake: {
 			removeDebugLogging: true,
-		};
-
-		config.automaticVercelMonitors = true;
-
-		return config;
+		},
+		automaticVercelMonitors: true,
 	},
 });
