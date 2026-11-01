@@ -13,7 +13,7 @@ import { useBrowserInfoContext } from "@/contexts/BrowserInfoContext";
 import {
 	type V1YoutubeReleasesGet200Response,
 	YouTubeApi,
-} from "@/src/openapi-client/api-node-tometome";
+} from "@/src/generated/api-node-tometome";
 import Album from "../Album";
 import Loading from "../Loading";
 import Thumbnail from "../Thumbnail";
