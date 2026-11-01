@@ -97,7 +97,7 @@ export default function PlayerContent({
 				<>
 					<Box
 						onClick={handlePlayerItemClick}
-						onKeyPress={(e) => {
+						onKeyDown={(e) => {
 							if (e.key === "Enter" || e.key === " ") {
 								e.preventDefault();
 								e.currentTarget.click();

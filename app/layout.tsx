@@ -2,20 +2,71 @@ import { CssBaseline } from "@mui/material";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v16-appRouter";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Geist, Noto_Sans_JP } from "next/font/google";
+import "./globals.css";
 import { cookies } from "next/headers";
 import { ApiDataProvider } from "@/contexts/ApiDataContext";
 import { AppleMusicProvider } from "@/contexts/AppleMusicContext";
 import { BrowserInfoProvider } from "@/contexts/BrowserInfoContext";
 import { type ColorModeChoice, ThemeRegistry } from "@/contexts/ThemeContext";
 
-const inter = Inter({ subsets: ["latin"] });
+// 英語、数字用フォント
+const geistSans = Geist({
+	variable: "--font-geist-sans",
+	subsets: ["latin"],
+});
+// 日本語フォント
+const fontNotoSansJP = Noto_Sans_JP({
+	variable: "--font-noto-sans-jp",
+});
 
 // const title = "ミュージックアーカイブスプロジェクト";
 const title = "ぷらそにかアーカイブス";
 const description =
 	"ぷらそにかアーカイブス - YouTubeチャンネル「ぷらそにか」の動画を詳細な検索機能、YouTubeの再生を提供します。";
-const keywords = "ぷらそにか,アーカイブス,YouTube,音楽,AppleMusic,YouTubeMusic";
+
+export const metadata: Metadata = {
+	metadataBase: new URL("https://music-archives-project.vercel.app"),
+	title: title,
+	description: description,
+	keywords: [
+		"ぷらそにか",
+		"アーカイブス",
+		"YouTube",
+		"音楽",
+		"AppleMusic",
+		"YouTubeMusic",
+	],
+	icons: {
+		icon: "/favicon.ico",
+		apple: "/apple-touch-icon.png",
+	},
+	openGraph: {
+		title: title,
+		description: description,
+		url: "music-archives-project.vercel.app",
+		siteName: title,
+		type: "website",
+		images: [
+			{
+				url: "/twitter_card.png",
+				width: 1600,
+				height: 900,
+				alt: title,
+			},
+		],
+	},
+	twitter: {
+		card: "summary_large_image",
+		site: "@MusicArchPJ",
+		title: title,
+		description: description,
+		images: ["/twitter_card.png"],
+	},
+	verification: {
+		google: "0ERg8PZXOGMCKiCI-c-8BqDFTWZrUGbGI0SmzXBmiOo",
+	},
+};
 
 export default async function RootLayout({
 	children,
@@ -29,33 +80,16 @@ export default async function RootLayout({
 			: "device";
 
 	return (
-		<html lang="ja">
+		<html
+			lang="ja"
+			className={`${geistSans.variable} ${fontNotoSansJP.variable}`}
+		>
 			<head>
-				<link rel="icon" href="/favicon.ico" sizes="any" />
-				<meta name="viewport" content="initial-scale=1, width=device-width" />
-				<meta charSet="UTF-8" />
-				{/* ↓ サーバーサイドで定義して返す必要がある。 */}
-				<title>{title}</title>
-				<meta name="description" content={description} />
-				<meta name="keywords" content={keywords} />
-				{/* ↓ サイトのテーマに合わせてブラウザの設定を変更する */}
-				<meta
-					name="theme-color"
-					content={initColorMode === "dark" ? "#000000" : "#FFFFFF"}
-				/>
 				{process.env.NEXT_PUBLIC_STAGE !== "dev" && (
-					<>
-						{/* Googleサイトコンソール */}
-						<meta
-							name="google-site-verification"
-							content="0ERg8PZXOGMCKiCI-c-8BqDFTWZrUGbGI0SmzXBmiOo"
-						/>
-						{/* Googleアナリティクス */}
-						<GoogleAnalytics gaId="G-EGPYKGH18H" />
-					</>
+					<GoogleAnalytics gaId="G-EGPYKGH18H" />
 				)}
 			</head>
-			<body className={inter.className}>
+			<body>
 				<AppRouterCacheProvider options={{ key: "mui", prepend: true }}>
 					<ThemeRegistry initColorMode={initColorMode}>
 						<AppleMusicProvider>
@@ -71,38 +105,4 @@ export default async function RootLayout({
 			</body>
 		</html>
 	);
-}
-
-export async function generateMetadata(): Promise<Metadata> {
-	return {
-		metadataBase: new URL("https://music-archives-project.vercel.app"),
-		title: title,
-		description: description,
-		icons: {
-			icon: "/favicon.ico",
-			apple: "/apple-touch-icon.png",
-		},
-		openGraph: {
-			title: title,
-			description: description,
-			url: "music-archives-project.vercel.app",
-			siteName: title,
-			type: "website",
-			images: [
-				{
-					url: "/twitter_card.png",
-					width: 1600,
-					height: 900,
-					alt: title,
-				},
-			],
-		},
-		twitter: {
-			card: "summary_large_image",
-			site: "@MusicArchPJ",
-			title: title,
-			description: description,
-			images: ["/twitter_card.png"],
-		},
-	};
 }

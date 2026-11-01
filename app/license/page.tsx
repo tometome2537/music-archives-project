@@ -1,12 +1,20 @@
 import { Box } from "@mui/material";
+import licensesJson from "@/app/license/licenses.json";
 import Navbar from "@/components/Navbar/Navbar";
-import licenses from "./licenses";
+
+type License = {
+	licenses: string;
+	repository?: string;
+	publisher?: string;
+	email?: string;
+};
 
 export default function Home() {
+	const licenses = licensesJson as Record<string, License>;
 	return (
 		<>
 			<Navbar />
-			<Box style={{ padding: "40px", fontFamily: "Arial, sans-serif" }}>
+			<Box style={{ padding: "40px" }}>
 				<h1 style={{ fontSize: "2.5rem", marginBottom: "20px" }}>
 					ライセンス情報
 				</h1>
@@ -22,7 +30,6 @@ export default function Home() {
 								padding: "15px",
 								border: "1px solid #ddd",
 								borderRadius: "8px",
-								// backgroundColor: "#f9f9f9",
 							}}
 						>
 							<Box
@@ -37,7 +44,6 @@ export default function Home() {
 								style={{
 									marginTop: "5px",
 									fontSize: "1rem",
-									// color: "#555",
 								}}
 							>
 								<strong>ライセンス:</strong> {details.licenses}

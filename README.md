@@ -22,19 +22,19 @@
   <https://code.visualstudio.com>
 
 - コードのフォーマットには 拡張機能のBiome を使用しています。
-([参考](https://tometome.notion.site/Biome-10f0553833378065a3b7cc7298b4d2fd?pvs=4))
+  ([参考](https://tometome.notion.site/Biome-10f0553833378065a3b7cc7298b4d2fd?pvs=4))
 
 ### ① 実行環境のインストール
 
 -  Node.jsをインストール
 
-    <https://nodejs.org/ja/>
+   <https://nodejs.org/ja/>
 
-    `.nvmrc` のファイルで定義されているバージョンを使用。
+   `.nvmrc` のファイルで定義されているバージョンを使用。
 
-    1 台の PC に複数バージョンの Node.Js を共存させる場合はこちらを参考にどうぞ。
+   1 台の PC に複数バージョンの Node.Js を共存させる場合はこちらを参考にどうぞ。
 
-    <https://tometome.notion.site/nvm-53d391fa3afb430e89e2bafbff852a1c>
+   <https://tometome.notion.site/nvm-53d391fa3afb430e89e2bafbff852a1c>
 
 
 ### ② サイトの起動
@@ -58,9 +58,10 @@
   ```
 
 ### 環境変数を取得する場合
+
 - 環境変数を追加する
-以下のリンクからファイルをダウンロード
-<https://drive.google.com/drive/folders/1tvweecfjmiAXSQwLxu3qCEMSSwynaWWq?usp=sharing>
+  以下のリンクからファイルをダウンロード
+  <https://drive.google.com/drive/folders/1tvweecfjmiAXSQwLxu3qCEMSSwynaWWq?usp=sharing>
 
 - 環境変数の復号化
 

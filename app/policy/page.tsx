@@ -47,7 +47,7 @@ export default function Home() {
 	return (
 		<>
 			<Navbar />
-			<Box style={{ padding: "40px", fontFamily: "Arial, sans-serif" }}>
+			<Box style={{ padding: "40px" }}>
 				<h1 style={{ fontSize: "2.5rem", marginBottom: "20px" }}>
 					プライバシーポリシー(Privacy Policy)
 				</h1>
