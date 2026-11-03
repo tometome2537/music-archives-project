@@ -23,6 +23,8 @@ type PlayerContentProps = {
 	artworkAlt?: string;
 	aspectRatio: number;
 	width: number;
+	isAudio: boolean;
+	startSeconds?: number;
 };
 
 export default function PlayerContent({
@@ -38,6 +40,8 @@ export default function PlayerContent({
 	artworkAlt,
 	aspectRatio,
 	width,
+	isAudio,
+	startSeconds,
 }: PlayerContentProps) {
 	// 再生/一時停止ボタンのクリックハンドラー
 	const handlePlayPause = (e: React.MouseEvent) => {
@@ -61,7 +65,11 @@ export default function PlayerContent({
 			{/* プレイヤー */}
 			{playerItem?.type === PlayerType.YouTube ? (
 				<YouTubePlayerView
-					videoId={playerItem?.mediaId || ""}
+					videoId={
+						isAudio && playerItem?.audioId
+							? playerItem?.audioId
+							: playerItem?.mediaId || ""
+					}
 					aspectRatio={aspectRatio}
 					width={width}
 					style={{
@@ -72,6 +80,7 @@ export default function PlayerContent({
 					playerRadius={!(isMobile && isFullscreen && aspectRatio !== 1)}
 					setPlayer={setYouTubePlayer}
 					setPlayerState={setYouTubePlayerState}
+					startSeconds={startSeconds}
 				/>
 			) : (
 				<Box

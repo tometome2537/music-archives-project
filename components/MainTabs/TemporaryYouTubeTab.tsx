@@ -13,7 +13,7 @@ import { useBrowserInfoContext } from "@/contexts/BrowserInfoContext";
 import {
 	type V1YoutubeReleasesGet200Response,
 	YouTubeApi,
-} from "@/src/openapi-client/api-node-tometome";
+} from "@/src/generated/api-node-tometome";
 import Album from "../Album";
 import Loading from "../Loading";
 import Thumbnail from "../Thumbnail";
@@ -356,6 +356,7 @@ export function TemporaryYouTubeTab(props: TemporaryYouTubeTab) {
 											props.setPlayerItem({
 												type: PlayerType.YouTube,
 												mediaId: tracks[0].releaseVideoId,
+												audioId: tracks[0].videoId,
 											});
 											if (tracks.length !== 0) {
 												props.setPlayerPlaylist({
@@ -364,6 +365,7 @@ export function TemporaryYouTubeTab(props: TemporaryYouTubeTab) {
 														return {
 															type: PlayerType.YouTube,
 															mediaId: item.releaseVideoId,
+															audioId: item.videoId,
 														};
 													}),
 												});

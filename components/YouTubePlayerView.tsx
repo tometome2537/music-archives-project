@@ -1,5 +1,5 @@
 import type React from "react";
-import { type Dispatch, Fragment, type SetStateAction } from "react";
+import { type Dispatch, Fragment, type SetStateAction, useRef } from "react";
 import YouTube, { type YouTubePlayer, type YouTubeProps } from "react-youtube";
 
 type YouTubePlayerViewProps = {
@@ -10,6 +10,8 @@ type YouTubePlayerViewProps = {
 	playerRadius?: boolean;
 	setPlayerState?: Dispatch<SetStateAction<YouTubePlayerState | undefined>>;
 	setPlayer?: Dispatch<SetStateAction<YouTubePlayer | undefined>>;
+	// 音声/動画の切り替え後に復帰する再生位置（秒）
+	startSeconds?: number;
 };
 
 enum State {
@@ -58,6 +60,38 @@ export type YouTubePlayerState = {
 };
 
 export default function YouTubePlayerView(props: YouTubePlayerViewProps) {
+	const resumeAttemptRef = useRef<{ key: string; attempts: number }>({
+		key: "",
+		attempts: 0,
+	});
+
+	const resumePlaybackPosition = (player: YouTubePlayer) => {
+		const target = props.startSeconds;
+		if (
+			target == null ||
+			!props.videoId ||
+			!Number.isFinite(target) ||
+			target <= 0
+		) {
+			return;
+		}
+
+		const key = `${props.videoId}:${target}`;
+		if (resumeAttemptRef.current.key !== key) {
+			resumeAttemptRef.current = { key, attempts: 0 };
+		}
+
+		const current = player.getCurrentTime?.() ?? 0;
+		if (typeof current !== "number" || Math.abs(current - target) <= 1.25) {
+			resumeAttemptRef.current.attempts = 2;
+			return;
+		}
+		if (resumeAttemptRef.current.attempts >= 2) return;
+
+		resumeAttemptRef.current.attempts += 1;
+		player.seekTo(target, true);
+	};
+
 	// YouTube Playerの再生オプション
 	const YouTubeOpts: YouTubeProps["opts"] = {
 		width: "100%",
@@ -67,6 +101,10 @@ export default function YouTubePlayerView(props: YouTubePlayerViewProps) {
 			autoplay: 1, // 自動再生
 			loop: 0, // デフォルトはループしない。
 			playlist: undefined,
+			// start は整数秒。端数は再生開始後の seekTo で補正する。
+			...(props.startSeconds != null && props.startSeconds > 0
+				? { start: Math.floor(props.startSeconds) }
+				: {}),
 		},
 	};
 
@@ -90,6 +128,11 @@ export default function YouTubePlayerView(props: YouTubePlayerViewProps) {
 			isMuted: event?.target?.isMuted(),
 		};
 		props.setPlayerState?.(r);
+
+		// 音声/動画の切り替えでプレイヤーが作り直されたとき、先頭に戻っていたら元の位置へ戻す。
+		if ((event?.data === 1 || event?.data === 5) && event.target) {
+			resumePlaybackPosition(event.target);
+		}
 	};
 
 	// YouTube Playerの読み込みが完了した時

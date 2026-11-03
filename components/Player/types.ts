@@ -6,6 +6,7 @@ export enum PlayerType {
 export type PlayerItem = {
 	type?: PlayerType;
 	mediaId?: string; // YouTubeの場合はvideoId。AppleMusicの場合はID
+	audioId?: string; // Youtubeの場合はトピックチャンネルのaudioのみの動画のID
 	title?: string;
 	author?: string;
 	short?: boolean;
