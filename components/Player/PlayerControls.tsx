@@ -1,32 +1,38 @@
 import { KeyboardArrowDown, Repeat } from "@mui/icons-material";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import ButtonGroup from "@mui/material/ButtonGroup";
 import IconButton from "@mui/material/IconButton";
 import { useTheme } from "@mui/material/styles";
 import Image from "next/image";
 import AppleMusicIcon from "@/icon/AppleMusicIcon";
-import { PlayerType } from "./types";
+import { type PlayerItem, PlayerType } from "./types";
 
 type PlayerControlsProps = {
 	isFullscreen: boolean;
 	setIsFullscreen: (value: boolean) => void;
 	playerType?: PlayerType;
-	mediaId?: string;
+	playerItem: PlayerItem;
 	title?: string;
 	repeat: boolean;
 	setRepeat: (value: boolean) => void;
 	width: number;
+	isAudio: boolean;
+	setIsAudio: (value: boolean) => void;
 };
 
 export default function PlayerControls({
 	isFullscreen,
 	setIsFullscreen,
 	playerType,
-	mediaId,
+	playerItem,
 	title,
 	repeat,
 	setRepeat,
 	width,
+	isAudio,
+	setIsAudio,
 }: PlayerControlsProps) {
 	const theme = useTheme();
 
@@ -53,7 +59,7 @@ export default function PlayerControls({
 					<IconButton
 						sx={{ marginY: 1 }}
 						component="a"
-						href={`https://m.youtube.com/watch?v=${mediaId}`}
+						href={`https://m.youtube.com/watch?v=${playerItem.mediaId}`}
 						target="_blank"
 					>
 						<YouTubeIcon sx={{ fontSize: "1.5rem", color: "rgb(236,44,46)" }} />
@@ -62,7 +68,7 @@ export default function PlayerControls({
 					<IconButton
 						sx={{ marginY: 1 }}
 						component="a"
-						href={`https://music.youtube.com/watch?v=${mediaId}`}
+						href={`https://music.youtube.com/watch?v=${playerItem.mediaId}`}
 						target="_blank"
 					>
 						<Image
@@ -73,6 +79,28 @@ export default function PlayerControls({
 							style={{ fontSize: "1.5rem" }}
 						/>
 					</IconButton>
+
+					{playerItem.audioId && playerItem.mediaId ? (
+						<Box
+							sx={{
+								display: "flex",
+								flexDirection: "column",
+								alignItems: "center",
+								"& > *": {
+									m: 2,
+								},
+							}}
+						>
+							<ButtonGroup variant="outlined" aria-label="Basic button group">
+								<Button disabled={isAudio} onClick={() => setIsAudio(true)}>
+									音声
+								</Button>
+								<Button disabled={!isAudio} onClick={() => setIsAudio(false)}>
+									動画
+								</Button>
+							</ButtonGroup>
+						</Box>
+					) : null}
 				</>
 			)}
 

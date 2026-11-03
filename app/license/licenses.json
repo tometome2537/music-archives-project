@@ -240,17 +240,17 @@
     "repository": "https://github.com/mui/mui-x",
     "publisher": "MUI Team"
   },
-  "@next/env@16.4.3": {
+  "@next/env@16.4.4": {
     "licenses": "MIT",
     "repository": "https://github.com/vercel/next.js",
     "publisher": "Next.js Team",
     "email": "support@vercel.com"
   },
-  "@next/swc-darwin-arm64@16.4.3": {
+  "@next/swc-darwin-arm64@16.4.4": {
     "licenses": "MIT",
     "repository": "https://github.com/vercel/next.js"
   },
-  "@next/third-parties@16.4.3": {
+  "@next/third-parties@16.4.4": {
     "licenses": "MIT",
     "repository": "https://github.com/vercel/next.js"
   },
@@ -452,7 +452,7 @@
     "licenses": "MIT",
     "repository": "https://github.com/juliangruber/balanced-match"
   },
-  "baseline-browser-mapping@2.11.34": {
+  "baseline-browser-mapping@2.11.35": {
     "licenses": "Apache-2.0",
     "repository": "https://github.com/web-platform-dx/baseline-browser-mapping"
   },
@@ -868,7 +868,7 @@
     "licenses": "MIT",
     "repository": "https://github.com/vercel/ms"
   },
-  "music-archives-project@3.3.20": {
+  "music-archives-project@3.3.21": {
     "licenses": "UNLICENSED",
     "private": true
   },
@@ -878,7 +878,7 @@
     "publisher": "Andrey Sitnik",
     "email": "andrey@sitnik.ru"
   },
-  "next@16.4.3": {
+  "next@16.4.4": {
     "licenses": "MIT",
     "repository": "https://github.com/vercel/next.js"
   },
@@ -1078,12 +1078,12 @@
     "licenses": "MIT",
     "repository": "https://github.com/react/react"
   },
-  "semver@5.7.2": {
+  "semver@5.7.3": {
     "licenses": "ISC",
     "repository": "https://github.com/npm/node-semver",
     "publisher": "GitHub Inc."
   },
-  "semver@7.8.5": {
+  "semver@7.8.6": {
     "licenses": "ISC",
     "repository": "https://github.com/npm/node-semver",
     "publisher": "GitHub Inc."

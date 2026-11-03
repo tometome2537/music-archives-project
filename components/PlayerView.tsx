@@ -59,6 +59,7 @@ export default function PlayerView(props: PlayerProps) {
 	const [youTubePlayer, setYouTubePlayer] = useState<YouTubePlayer | undefined>(
 		undefined,
 	);
+	const [isAudio, setIsAudio] = useState<boolean>(true);
 	const [repeat, setRepeat] = useState<boolean>(false);
 
 	// カスタムフックを使用
@@ -163,11 +164,13 @@ export default function PlayerView(props: PlayerProps) {
 						isFullscreen={isPlayerFullscreen}
 						setIsFullscreen={setIsPlayerFullscreen}
 						playerType={playerItem?.type}
-						mediaId={playerItem?.mediaId}
+						playerItem={playerItem}
 						title={playerItem?.title}
 						repeat={repeat}
 						setRepeat={setRepeat}
 						width={width}
+						isAudio={isAudio}
+						setIsAudio={setIsAudio}
 					/>
 
 					{/* プレイヤー本体とミニプレイヤー */}
@@ -184,6 +187,7 @@ export default function PlayerView(props: PlayerProps) {
 						artworkAlt={artworkAlt}
 						aspectRatio={aspectRatio}
 						width={width}
+						isAudio={isAudio}
 					/>
 
 					{/* 詳細情報（フルスクリーン時） */}

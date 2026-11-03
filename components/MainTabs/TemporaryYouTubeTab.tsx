@@ -356,6 +356,7 @@ export function TemporaryYouTubeTab(props: TemporaryYouTubeTab) {
 											props.setPlayerItem({
 												type: PlayerType.YouTube,
 												mediaId: tracks[0].releaseVideoId,
+												audioId: tracks[0].videoId,
 											});
 											if (tracks.length !== 0) {
 												props.setPlayerPlaylist({
@@ -364,6 +365,7 @@ export function TemporaryYouTubeTab(props: TemporaryYouTubeTab) {
 														return {
 															type: PlayerType.YouTube,
 															mediaId: item.releaseVideoId,
+															audioId: item.videoId,
 														};
 													}),
 												});
