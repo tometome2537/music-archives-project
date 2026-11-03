@@ -59,8 +59,17 @@ export default function PlayerView(props: PlayerProps) {
 	const [youTubePlayer, setYouTubePlayer] = useState<YouTubePlayer | undefined>(
 		undefined,
 	);
-	const [isAudio, setIsAudio] = useState<boolean>(true);
+	const [isAudio, setIsAudio] = useState<boolean>(false);
 	const [repeat, setRepeat] = useState<boolean>(false);
+	// 音声/動画を切り替えた瞬間の再生位置。別の曲には引き継がない。
+	const [audioVideoResume, setAudioVideoResume] = useState<{
+		mediaId: string;
+		audioId: string;
+		time: number;
+	} | null>(null);
+	const [resumeTrackKey, setResumeTrackKey] = useState(
+		`${playerItem?.mediaId ?? ""}:${playerItem?.audioId ?? ""}`,
+	);
 
 	// カスタムフックを使用
 	useAppleMusicEvents(musicKit, setPlayerItem, setPlayerPlaylist);
@@ -83,6 +92,44 @@ export default function PlayerView(props: PlayerProps) {
 		setPlayerItem,
 		repeat,
 	);
+
+	const trackKey = `${playerItem?.mediaId ?? ""}:${playerItem?.audioId ?? ""}`;
+	// 曲が変わったら、音声/動画切り替え用の再生位置は破棄する。
+	if (trackKey !== resumeTrackKey) {
+		setResumeTrackKey(trackKey);
+		setAudioVideoResume(null);
+	}
+
+	const handleSetIsAudio = (next: boolean) => {
+		const mediaId = playerItem?.mediaId;
+		const audioId = playerItem?.audioId;
+		let time: number | undefined;
+		try {
+			time = youTubePlayer?.getCurrentTime();
+		} catch {
+			time = undefined;
+		}
+		if (
+			mediaId &&
+			audioId &&
+			typeof time === "number" &&
+			Number.isFinite(time) &&
+			time > 0
+		) {
+			setAudioVideoResume({ mediaId, audioId, time });
+		} else {
+			setAudioVideoResume(null);
+		}
+		setIsAudio(next);
+	};
+
+	const startSeconds =
+		trackKey === resumeTrackKey &&
+		audioVideoResume &&
+		audioVideoResume.mediaId === playerItem?.mediaId &&
+		audioVideoResume.audioId === playerItem?.audioId
+			? audioVideoResume.time
+			: undefined;
 
 	// レイアウト計算
 	const { aspectRatio, width } = usePlayerLayout(
@@ -170,7 +217,7 @@ export default function PlayerView(props: PlayerProps) {
 						setRepeat={setRepeat}
 						width={width}
 						isAudio={isAudio}
-						setIsAudio={setIsAudio}
+						setIsAudio={handleSetIsAudio}
 					/>
 
 					{/* プレイヤー本体とミニプレイヤー */}
@@ -188,6 +235,7 @@ export default function PlayerView(props: PlayerProps) {
 						aspectRatio={aspectRatio}
 						width={width}
 						isAudio={isAudio}
+						startSeconds={startSeconds}
 					/>
 
 					{/* 詳細情報（フルスクリーン時） */}

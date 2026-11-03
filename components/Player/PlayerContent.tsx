@@ -24,6 +24,7 @@ type PlayerContentProps = {
 	aspectRatio: number;
 	width: number;
 	isAudio: boolean;
+	startSeconds?: number;
 };
 
 export default function PlayerContent({
@@ -40,6 +41,7 @@ export default function PlayerContent({
 	aspectRatio,
 	width,
 	isAudio,
+	startSeconds,
 }: PlayerContentProps) {
 	// 再生/一時停止ボタンのクリックハンドラー
 	const handlePlayPause = (e: React.MouseEvent) => {
@@ -78,6 +80,7 @@ export default function PlayerContent({
 					playerRadius={!(isMobile && isFullscreen && aspectRatio !== 1)}
 					setPlayer={setYouTubePlayer}
 					setPlayerState={setYouTubePlayerState}
+					startSeconds={startSeconds}
 				/>
 			) : (
 				<Box
