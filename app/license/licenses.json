@@ -5,7 +5,7 @@
     "publisher": "The Babel Team",
     "url": "https://babel.dev/team"
   },
-  "@babel/generator@7.29.12": {
+  "@babel/generator@7.29.13": {
     "licenses": "MIT",
     "repository": "https://github.com/babel/babel",
     "publisher": "The Babel Team",
@@ -23,7 +23,7 @@
     "publisher": "The Babel Team",
     "url": "https://babel.dev/team"
   },
-  "@babel/helper-string-parser@7.29.11": {
+  "@babel/helper-string-parser@7.29.13": {
     "licenses": "MIT",
     "repository": "https://github.com/babel/babel",
     "publisher": "The Babel Team",
@@ -35,13 +35,13 @@
     "publisher": "The Babel Team",
     "url": "https://babel.dev/team"
   },
-  "@babel/parser@7.29.12": {
+  "@babel/parser@7.29.13": {
     "licenses": "MIT",
     "repository": "https://github.com/babel/babel",
     "publisher": "The Babel Team",
     "url": "https://babel.dev/team"
   },
-  "@babel/runtime@7.29.10": {
+  "@babel/runtime@7.29.13": {
     "licenses": "MIT",
     "repository": "https://github.com/babel/babel",
     "publisher": "The Babel Team",
@@ -53,7 +53,7 @@
     "publisher": "The Babel Team",
     "url": "https://babel.dev/team"
   },
-  "@babel/traverse@7.29.12": {
+  "@babel/traverse@7.29.13": {
     "licenses": "MIT",
     "repository": "https://github.com/babel/babel",
     "publisher": "The Babel Team",
@@ -70,12 +70,12 @@
     "repository": "https://github.com/mui/base-ui",
     "publisher": "MUI Team"
   },
-  "@biomejs/biome@2.6.4": {
+  "@biomejs/biome@2.6.6": {
     "licenses": "MIT OR Apache-2.0",
     "repository": "https://github.com/biomejs/biome",
     "publisher": "Emanuele Stoppa"
   },
-  "@biomejs/cli-darwin-arm64@2.6.4": {
+  "@biomejs/cli-darwin-arm64@2.6.6": {
     "licenses": "MIT OR Apache-2.0",
     "repository": "https://github.com/biomejs/biome"
   },
@@ -153,6 +153,9 @@
     "repository": "https://github.com/lovell/sharp-libvips",
     "publisher": "Lovell Fuller",
     "email": "npm@lovell.info"
+  },
+  "@isaacs/nonrecursive-glob-match@1.1.0": {
+    "licenses": "BlueOak-1.0.0"
   },
   "@jridgewell/gen-mapping@0.3.13": {
     "licenses": "MIT",
@@ -240,17 +243,17 @@
     "repository": "https://github.com/mui/mui-x",
     "publisher": "MUI Team"
   },
-  "@next/env@16.4.4": {
+  "@next/env@16.4.5": {
     "licenses": "MIT",
     "repository": "https://github.com/vercel/next.js",
     "publisher": "Next.js Team",
     "email": "support@vercel.com"
   },
-  "@next/swc-darwin-arm64@16.4.4": {
+  "@next/swc-darwin-arm64@16.4.5": {
     "licenses": "MIT",
     "repository": "https://github.com/vercel/next.js"
   },
-  "@next/third-parties@16.4.4": {
+  "@next/third-parties@16.4.5": {
     "licenses": "MIT",
     "repository": "https://github.com/vercel/next.js"
   },
@@ -287,86 +290,86 @@
     "publisher": "Rich Harris",
     "email": "richard.a.harris@gmail.com"
   },
-  "@rollup/rollup-darwin-arm64@4.67.4": {
+  "@rollup/rollup-darwin-arm64@4.67.5": {
     "licenses": "MIT",
     "repository": "https://github.com/rollup/rollup",
     "publisher": "Lukas Taegert-Atkinson"
   },
-  "@sentry/browser-utils@11.10.0": {
+  "@sentry/browser-utils@11.11.0": {
     "licenses": "MIT",
     "repository": "https://github.com/getsentry/sentry-javascript",
     "publisher": "Sentry"
   },
-  "@sentry/browser@11.10.0": {
+  "@sentry/browser@11.11.0": {
     "licenses": "MIT",
     "repository": "https://github.com/getsentry/sentry-javascript",
     "publisher": "Sentry"
   },
-  "@sentry/bundler-plugins@11.10.0": {
+  "@sentry/bundler-plugins@11.11.0": {
     "licenses": "MIT",
     "repository": "https://github.com/getsentry/sentry-javascript",
     "publisher": "Sentry"
   },
-  "@sentry/cloudflare@11.10.0": {
+  "@sentry/cloudflare@11.11.0": {
     "licenses": "MIT",
     "repository": "https://github.com/getsentry/sentry-javascript",
     "publisher": "Sentry"
   },
-  "@sentry/conventions@0.29.0": {
+  "@sentry/conventions@0.30.0": {
     "licenses": "MIT",
     "repository": "https://github.com/getsentry/sentry-conventions"
   },
-  "@sentry/core@11.10.0": {
+  "@sentry/core@11.11.0": {
     "licenses": "MIT",
     "repository": "https://github.com/getsentry/sentry-javascript",
     "publisher": "Sentry"
   },
-  "@sentry/feedback@11.10.0": {
+  "@sentry/feedback@11.11.0": {
     "licenses": "MIT",
     "repository": "https://github.com/getsentry/sentry-javascript",
     "publisher": "Sentry"
   },
-  "@sentry/nextjs@11.10.0": {
+  "@sentry/nextjs@11.11.0": {
     "licenses": "MIT",
     "repository": "https://github.com/getsentry/sentry-javascript",
     "publisher": "Sentry"
   },
-  "@sentry/node@11.10.0": {
+  "@sentry/node@11.11.0": {
     "licenses": "MIT",
     "repository": "https://github.com/getsentry/sentry-javascript",
     "publisher": "Sentry"
   },
-  "@sentry/opentelemetry@11.10.0": {
+  "@sentry/opentelemetry@11.11.0": {
     "licenses": "MIT",
     "repository": "https://github.com/getsentry/sentry-javascript",
     "publisher": "Sentry"
   },
-  "@sentry/react@11.10.0": {
+  "@sentry/react@11.11.0": {
     "licenses": "MIT",
     "repository": "https://github.com/getsentry/sentry-javascript",
     "publisher": "Sentry"
   },
-  "@sentry/replay-canvas@11.10.0": {
+  "@sentry/replay-canvas@11.11.0": {
     "licenses": "MIT",
     "repository": "https://github.com/getsentry/sentry-javascript",
     "publisher": "Sentry"
   },
-  "@sentry/replay@11.10.0": {
+  "@sentry/replay@11.11.0": {
     "licenses": "MIT",
     "repository": "https://github.com/getsentry/sentry-javascript",
     "publisher": "Sentry"
   },
-  "@sentry/server-runtime-injection@11.10.0": {
+  "@sentry/server-runtime-injection@11.11.0": {
     "licenses": "MIT",
     "repository": "https://github.com/getsentry/sentry-javascript",
     "publisher": "Sentry"
   },
-  "@sentry/server-utils@11.10.0": {
+  "@sentry/server-utils@11.11.0": {
     "licenses": "MIT",
     "repository": "https://github.com/getsentry/sentry-javascript",
     "publisher": "Sentry"
   },
-  "@sentry/vercel-edge@11.10.0": {
+  "@sentry/vercel-edge@11.11.0": {
     "licenses": "MIT",
     "repository": "https://github.com/getsentry/sentry-javascript",
     "publisher": "Sentry"
@@ -474,7 +477,7 @@
     "email": "sindresorhus@gmail.com",
     "url": "sindresorhus.com"
   },
-  "caniuse-lite@1.0.30001820": {
+  "caniuse-lite@1.0.30001823": {
     "licenses": "CC-BY-4.0",
     "repository": "https://github.com/browserslist/caniuse-lite",
     "publisher": "Ben Briggs",
@@ -660,7 +663,7 @@
     "publisher": "Raynos",
     "email": "raynos2@gmail.com"
   },
-  "glob@13.0.6": {
+  "glob@14.0.4": {
     "licenses": "BlueOak-1.0.0",
     "repository": "https://github.com/isaacs/node-glob",
     "publisher": "Isaac Z. Schlueter",
@@ -735,7 +738,7 @@
     "publisher": "Qix",
     "url": "http://github.com/qix-"
   },
-  "is-core-module@2.17.0": {
+  "is-core-module@2.18.0": {
     "licenses": "MIT",
     "repository": "https://github.com/inspect-js/is-core-module",
     "publisher": "Jordan Harband",
@@ -825,7 +828,7 @@
     "repository": "https://github.com/Rich-Harris/magic-string",
     "publisher": "Rich Harris"
   },
-  "minimatch@10.2.6": {
+  "minimatch@11.0.5": {
     "licenses": "BlueOak-1.0.0",
     "repository": "https://github.com/isaacs/minimatch",
     "publisher": "Isaac Z. Schlueter",
@@ -868,7 +871,7 @@
     "licenses": "MIT",
     "repository": "https://github.com/vercel/ms"
   },
-  "music-archives-project@3.3.21": {
+  "music-archives-project@3.4.1": {
     "licenses": "UNLICENSED",
     "private": true
   },
@@ -878,7 +881,7 @@
     "publisher": "Andrey Sitnik",
     "email": "andrey@sitnik.ru"
   },
-  "next@16.4.4": {
+  "next@16.4.5": {
     "licenses": "MIT",
     "repository": "https://github.com/vercel/next.js"
   },
@@ -969,7 +972,7 @@
     "publisher": "Javier Blanco",
     "email": "http://jbgutierrez.info"
   },
-  "path-scurry@2.0.2": {
+  "path-scurry@3.0.0": {
     "licenses": "BlueOak-1.0.0",
     "repository": "https://github.com/isaacs/path-scurry",
     "publisher": "Isaac Z. Schlueter",
@@ -1062,14 +1065,14 @@
     "email": "sindresorhus@gmail.com",
     "url": "sindresorhus.com"
   },
-  "resolve@1.22.13": {
+  "resolve@1.22.14": {
     "licenses": "MIT",
     "repository": "https://github.com/browserify/resolve",
     "publisher": "James Halliday",
     "email": "mail@substack.net",
     "url": "http://substack.net"
   },
-  "rollup@4.67.4": {
+  "rollup@4.67.5": {
     "licenses": "MIT",
     "repository": "https://github.com/rollup/rollup",
     "publisher": "Rich Harris"

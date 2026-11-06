@@ -1,6 +1,6 @@
 {
   "name": "music-archives-project",
-  "version": "3.4.0",
+  "version": "3.4.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -24,21 +24,21 @@
     "@mui/material": "^9.5.0",
     "@mui/material-nextjs": "^9.5.0",
     "@mui/x-date-pickers": "^9.17.0",
-    "@next/third-parties": "^16.4.4",
-    "@sentry/nextjs": "^11.10.0",
+    "@next/third-parties": "^16.4.5",
+    "@sentry/nextjs": "^11.11.0",
     "dayjs": "^1.11.23",
     "js-cookie": "^3.0.8",
     "linkify-plugin-hashtag": "^4.4.0",
     "linkify-plugin-mention": "^4.4.0",
     "linkify-react": "^4.4.0",
     "linkifyjs": "^4.3.3",
-    "next": "^16.4.4",
+    "next": "^16.4.5",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
     "react-youtube": "^10.1.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.6.4",
+    "@biomejs/biome": "^2.6.6",
     "@types/js-cookie": "^3.0.6",
     "@types/node": "^26.6.6",
     "@types/react": "^19.3.0",

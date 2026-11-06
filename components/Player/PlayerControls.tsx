@@ -80,7 +80,9 @@ export default function PlayerControls({
 						/>
 					</IconButton>
 
-					{playerItem.audioId && playerItem.mediaId ? (
+					{playerItem.audioId &&
+					playerItem.mediaId &&
+					playerItem.audioId !== playerItem.mediaId ? (
 						<Box
 							sx={{
 								display: "flex",
